@@ -2,7 +2,6 @@
 ### Project Name: __Yet to decide__
 **Student:** Tynan Kocet
 **Teacher:** Mr McFarlane  
-**Target Submission Year:** 2026
 
 ---
 
