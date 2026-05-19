@@ -6,7 +6,7 @@
 ---
 
 ## Project Vision 
-This project translates tactical dark-fantasy "reflexes" into strategic "resource management" using a component-based Object-Oriented Programming (OOP) framework in Python 3.10+. 
+This project translates tactical dark-fantasy "reflexes" into strategic "resource management" using a component-based Object-Oriented Programming (OOP) framework in Python 3.14. 
 
 ### Core Gameplay Dynamics
 * **The Action Economy**: Every movement, dodge, and strike consumes static Stamina points.
