@@ -91,13 +91,13 @@ while True:
         else:
             print(f"You don't see a {move[1]} here!")
     if "Key" in inventory and "Potion" in inventory:
-        print("You escaped from Matej's evil house!!!")
+        print("You escaped from haunted house!!!")
         break
     if "enemy_1" in rooms[currentRoom] and rooms[currentRoom]["enemy_1"] == "Monster":
         if "Potion" in inventory:
             print("You throw the potion onto the monster")
-            print("The monster reveals itself as MATEJ")
-            print("MATEJ weaken goes back into the house, letting you free")
+            print("The monster reveals itself as FRED-BEAR")
+            print("FRED-BEAR weaken goes back into the house, letting you free")
             print("YOU WIN!")
             break
         else:
