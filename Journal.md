@@ -29,17 +29,19 @@ go [direction]
 get [item]
       ''')
 
-def statues():
+def status():
     print("---------------")
     print(f"Current Room: {currentRoom}")
     print(f"Inventory: {inventory}")
 
-    if "item_1" in rooms[currentRoom] and rooms[currentRoom]["item_1"]:
-        room_item = rooms[currentRoom]["item_1"]
-        print(f"You see a {room_item}!")
+    if "items" in rooms[currentRoom]:
+        for item in rooms[currentRoom]["items"]:
+            print(f"You see a {item}!")
 
 
-    print("---------------")
+def starting_scene():
+    print("You inner voice is trying to speak with you.")
+    print("It says to get out, anything will do just get out")
     
 currentRoom = "Hall"
 
@@ -47,16 +49,16 @@ rooms = {
             "Dining Room" : {
                         "south" : "Garden",
                         "west" : "Hall",
-                        "item_1" : "Potion"
+                        "items" : ["Potion", "bread"] 
                             },
             "Garden" : {
                          "north" : "Dining Room",
-                        "item_1" : "Flower"
+                        "items" : ["Flower"]
                         },
             "Hall" : {
                         "south": "Bedroom",
                         "east" : "Garden",
-                        "item_1" : "Key"
+                        "items" : ["Key"]
                      },
             "Bedroom" : {
                         "north" : "Hall",
@@ -70,12 +72,16 @@ inventory = []
 
 showInstructions()
 
+starting_scene()
+
+
 while True:
 
-    statues()
+    status()
     move = input(">")
     move = move.split(" ", 1)
     if move[0] == "go":
+        direction = move[1].lower()
         if move[1] in rooms[currentRoom]:
             currentRoom = rooms[currentRoom][move[1]]
             print(f"you now in {currentRoom}!")
@@ -83,24 +89,29 @@ while True:
             print(f"you can't go {move[1]}!")
             
     elif move[0] == "get":
-        if move[1] == rooms[currentRoom].get("item_1"):
-            print(f"you got a {move[1]}!")
-            inventory.append(move[1])
-            rooms[currentRoom]["item_1"] = ""
+        item_target = move[1].capitalize()
+
+        if "items" in rooms[currentRoom] and item_target in rooms[currentRoom]["items"]:
+            print(f"you got a {item_target}!")
+            inventory.append(item_target)
+            rooms[currentRoom]["items"].remove(item_target)
             print(inventory)
         else:
-            print(f"You don't see a {move[1]} here!")
+            print(f"You don't see a {item_target} here!")
+
+        
     if "Key" in inventory and "Potion" in inventory:
-        print("You escaped from haunted house!!!")
+        print("You escaped from Matej's diddy evil house!!!")
         break
     if "enemy_1" in rooms[currentRoom] and rooms[currentRoom]["enemy_1"] == "Monster":
         if "Potion" in inventory:
             print("You throw the potion onto the monster")
-            print("The monster reveals itself as FRED-BEAR")
-            print("FRED-BEAR weaken goes back into the house, letting you free")
+            print("The monster reveals itself as MATEJ")
+            print("MATEJ weaken goes back into the house, letting you free")
             print("YOU WIN!")
             break
         else:
+            print("There was a monster here!!!!")
             print("You have been eaten!")
             print("GAME OVER ")
             break
