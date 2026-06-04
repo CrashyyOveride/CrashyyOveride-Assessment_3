@@ -49,7 +49,8 @@ This is the final boss of the first dungeon, this enemy is only accessible throu
 #### Oakhaven (Starting point)
 This area is the starting point, where the Exiled (You) lands, it’s filled with busy streets and a large wall circling around the town. It’s home to The Blind Boar which is a famous chain of taverns throughout the lands. It’s a civilian town, so not much to do but to gather information about the dungeon that resides near the town. More information will further provide assistance to the player, for example, finding out the first mob you will fight, “Orb” and how it acts. This town is also home to massive ruins that the town is built around. One of the most famous landmarks in this town is a huge stone called “Pathfinder,” as it said touching this rock, provides luck in finding your way back home.
 
-#### Dungeon 1 (Nazareth)
+#### Ashenhollow (1st Dungeon)
+This dungeon is crawling with low level enemies, but beware, this dungeon is home to the lesser dragon, the most powerful enemy in it. This dungeon allows you to play while giving you a tutorial, combining the aspects of full fledged level and having a sort of taste of the rest of the game. 
 
 
 ---
