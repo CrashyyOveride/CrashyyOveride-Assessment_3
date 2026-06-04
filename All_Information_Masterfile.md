@@ -52,6 +52,8 @@ This area is the starting point, where the Exiled (You) lands, it’s filled wit
 #### Ashenhollow (1st Dungeon)
 This dungeon is crawling with low level enemies, but beware, this dungeon is home to the lesser dragon, the most powerful enemy in it. This dungeon allows you to play while giving you a tutorial, combining the aspects of full fledged level and having a sort of taste of the rest of the game. 
 
+#### Parthalán Cave (Sercet Location)
+
 
 ---
 
