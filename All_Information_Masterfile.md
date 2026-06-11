@@ -19,7 +19,7 @@ Soldat is a commander of a north expedition squad, leading roughly 10 men in his
 Orsted is the leader of the band of bandits called ‘Gilded Gold’. He is a very powerful character. This character is NOT an attackable character, no matter how powerful you are. Once he appears you must immediately avoid him or end up having to play a mini game which has a very high risk of killing you. This character's appearance in the game is very rare, as most of the encounters of the Gilded Gold are with his underlings which are very weak compared to him. NPCs will actively kick you out of taverns or safe points, if you speak the name ‘Orsted’ as it’s a folk tale that his name brings curses upon those who speak of him.
 
 ### Gilded Gold
-This band of low level bandits are what make up this group. They are mostly weak. This group will be encountered by chance, while venturing on land, as they do not appear inside a dungeon. However their boss Orsted Drake can appear at any moment in the game. Orsted does not concern himself with their activities.
+This band of low level bandits are what make up this group. They are mostly weak. This group will be encountered by chance, while venturing on land, as they do not appear inside a dungeon. However their boss Orsted Drake can appear at any moment in the game. Orsted does not concern himself with their activities, as he wasn't even the one who made up this band of bandits. (They formed from admirers)
 
 ### Mary Althea
 This character is one of few characters that will help you along your venture. She may appear, you have either two choices, get healed or dismiss her. By choosing to get healed, she doesn’t appear anymore, however dismissing her, she may have another chance again to appear. Her minimum appearance rate in the game is 1.
@@ -52,8 +52,8 @@ This area is the starting point, where the Exiled (You) lands, it’s filled wit
 #### Ashenhollow (1st Dungeon)
 This dungeon is crawling with low level enemies, but beware, this dungeon is home to the lesser dragon, the most powerful enemy in it. This dungeon allows you to play while giving you a tutorial, combining the aspects of full fledged level and having a sort of taste of the rest of the game. 
 
-#### Parthalán Cave (Sercet Location)
-
+#### Parthalán Hideout (Sercet Location)
+A sercet cave that only can be entered through a sercet word code, the time you must enter this code is at oakhavens tavern 'Blind Boar' and asking the bartender. The way to acquire this code, you need to look closely at the details when reading a certains item description. 
 
 ---
 
