@@ -53,7 +53,7 @@ This area is the starting point, where the Exiled (You) lands, it’s filled wit
 This dungeon is crawling with low level enemies, but beware, this dungeon is home to the lesser dragon, the most powerful enemy in it. This dungeon allows you to play while giving you a tutorial, combining the aspects of full fledged level and having a sort of taste of the rest of the game. 
 
 #### Parthalán Hideout (Sercet Location)
-A sercet cave that only can be entered through a sercet word code, the time you must enter this code is at oakhavens tavern 'Blind Boar' and asking the bartender. The way to acquire this code, you need to look closely at the details when reading a certains item description. 
+A sercet cave that only can be entered through a sercet word code, the time you must enter this code is at oakhavens tavern 'Blind Boar' and asking the bartender. The way to acquire this code, you need to look closely at the details when reading a certain item description. 
 
 ---
 
