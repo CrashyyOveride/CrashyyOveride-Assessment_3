@@ -55,6 +55,12 @@ This dungeon is crawling with low level enemies, but beware, this dungeon is hom
 #### Parthalán Hideout (Sercet Location)
 A sercet cave that only can be entered through a sercet word code, the time you must enter this code is at oakhavens tavern 'Blind Boar' and asking the bartender. The way to acquire this code, you need to look closely at the details when reading a certain item description. 
 
+### Anatoli (Shout out James) (2nd Area)
+This town is now unlocked after beating Ashenhollow the first dungeon, it's up to you if you would like to travel to this location. This town is located far north up into the mountains, it's full of log cabins with one shop with reasourses you can buy there. This area is not a safe zone, so you can be encounted by enemies. 
+
+// some residents who live there hear stories about 
+
+
 ---
 
 ## Items
