@@ -60,18 +60,28 @@ This town is now unlocked after beating Ashenhollow the first dungeon, it's up t
 
 ## Items
 
+#### --Common Items--
 ### Dagger
 This small blade can be bought in any shop.
 
 ### Shield
-
+This shield can be bought in any shop.
 
 ### Longsword
+This longsword can be bought in any shop.
 
 ### Greatsword
+This greatsword can be bought in any shop.
 
 ### Stick
 This item can be found while exploring deep paths, venturing outside dungeons. This is a totally normal stick, with only one effect which is a debuff called 'Embarrassment' which decreases ones self image. (This effect has no true value towards anything in the game, it just why are you holding a stick?)
+
+
+
+
+
+
+#### --Relics--
 
 ### Orsted’s Great Rune
 This item is dropped by all the dungeon bosses in the game, this item generates an uneasy aura while holding it, so best not hold onto it for too long. These Runes vastly increase the player's health, but at the cost of increasing Orsted’s appearance.
