@@ -42,17 +42,15 @@ This is the final boss of the first dungeon, this enemy is only accessible throu
 
 ---
 
-## World Building
+## World Building (Levels/ Areas) 
 
-### Levels/ Areas
-
-#### Oakhaven (Starting point)
+### Oakhaven (Starting point)
 This area is the starting point, where the Exiled (You) lands, it’s filled with busy streets and a large wall circling around the town. It’s home to The Blind Boar which is a famous chain of taverns throughout the lands. It’s a civilian town, so not much to do but to gather information about the dungeon that resides near the town. More information will further provide assistance to the player, for example, finding out the first mob you will fight, “Orb” and how it acts. This town is also home to massive ruins that the town is built around. One of the most famous landmarks in this town is a huge stone called “Pathfinder,” as it said touching this rock, provides luck in finding your way back home.
 
-#### Ashenhollow (1st Dungeon)
+### Ashenhollow (1st Dungeon)
 This dungeon is crawling with low level enemies, but beware, this dungeon is home to the lesser dragon, the most powerful enemy in it. This dungeon allows you to play while giving you a tutorial, combining the aspects of full fledged level and having a sort of taste of the rest of the game. 
 
-#### Parthalán Hideout (Secret Location)
+### Parthalán Hideout (Secret Location)
 A secret cave that only can be entered through a secret word code, the time you must enter this code is at oakhavens tavern 'Blind Boar' and asking the bartender. The way to acquire this code, you need to look closely at the details when reading a certain item description. 
 
 ### Anatoli (Shout out James) (2nd Area)
@@ -61,6 +59,8 @@ This town is now unlocked after beating Ashenhollow the first dungeon, it's up t
 ---
 
 ## Items
+
+### 
 
 ### Stick
 This item can be found while exploring deep paths, venturing outside dungeons. This is a totally normal stick, with only one effect which is a debuff called 'Embarrassment' which decreases ones self image. (This effect has no true value towards anything in the game, it just why are you holding a stick?)
