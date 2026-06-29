@@ -4,7 +4,7 @@
 
 ---
 
-## Characters
+# Characters
 
 ### Exiled (You)
 One of many who have been exiled from the sky, seeking glory in exploring dungeons on the lands below. A lonely warrior who fights for his worth in each battle. His motives can change depending on what type of route the player wants to go down.
@@ -26,7 +26,7 @@ This character is one of few characters that will help you along your venture. S
 
 ---
 
-## Dungeon 1 Enemies & Boss
+# Dungeon 1 Enemies & Boss
 
 ### Orb
 Found in upper levels of a dungeon. This orb is a pure black ball, compressed of high levels of wild magic, nearly uncontrollable by a mere human. Orb is the most common enemy you will encounter within a dungeon. Although the weakest by far of all the enemies, Orb is an unruly and unpredictable enemy, he may become stronger with the right conditions.
@@ -42,7 +42,7 @@ This is the final boss of the first dungeon, this enemy is only accessible throu
 
 ---
 
-## World Building (Levels/ Areas) 
+# World Building (Levels/ Areas) 
 
 ### Oakhaven (Starting point)
 This area is the starting point, where the Exiled (You) lands, it’s filled with busy streets and a large wall circling around the town. It’s home to The Blind Boar which is a famous chain of taverns throughout the lands. It’s a civilian town, so not much to do but to gather information about the dungeon that resides near the town. More information will further provide assistance to the player, for example, finding out the first mob you will fight, “Orb” and how it acts. This town is also home to massive ruins that the town is built around. One of the most famous landmarks in this town is a huge stone called “Pathfinder,” as it said touching this rock, provides luck in finding your way back home.
@@ -58,9 +58,10 @@ This town is now unlocked after beating Ashenhollow the first dungeon, it's up t
 
 ---
 
-## Items
+# Items
 
-#### --Common Items--
+## --------Common Items--------
+
 ### Dagger
 This small blade can be bought in any shop.
 
@@ -81,7 +82,7 @@ This item can be found while exploring deep paths, venturing outside dungeons. T
 
 
 
-#### --Relics--
+## --------Relics--------
 
 ### Orsted’s Great Rune
 This item is dropped by all the dungeon bosses in the game, this item generates an uneasy aura while holding it, so best not hold onto it for too long. These Runes vastly increase the player's health, but at the cost of increasing Orsted’s appearance.
