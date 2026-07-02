@@ -27,9 +27,9 @@ This project translates tactical dark-fantasy "reflexes" into strategic "resourc
 ### 2. Strategic World Map Layout
 The game universe operates via a discrete **Node Graph** mapped inside a nested dictionary framework:
 
-## First Rough Draft of the game world building
+## First Rough DRAFT of the game world building
 
-`Oakhaven Town Hub` <---> `Dungeon Level 1 (Orb)` <---> `Dungeon Level 2 (Noid)` <---> `Dungeon Level 3 (Drakonid)` <---> `Lesser Dragon Arena`
+`Oakhaven Town Hub` <---> `Dungeon Level 1 (Ashenhollow)` <---> `Dungeon Level 2 (Not Maded Yet)` <---> `Dungeon Level 3 (Not Maded Yet)` <---> `Dragon Arena (Final Boss and level)`
 
 ---
 
