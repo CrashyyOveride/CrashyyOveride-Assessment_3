@@ -82,7 +82,12 @@ This item can be found while exploring deep paths, venturing outside dungeons. T
 ### Holy Kris (Dagger class)
 This weapon is the same as a dagger, however this one was embedded with holy divinity. This dagger can glow when it is equiped, making it an alternate light source. 
 
+### Vantablack Great Axe ()
+
 ## --------Relics--------
+
+### Matej's Old Axe
+This axe can be attained if only certain condidtions are met. 
 
 ### Orsted’s Great Rune
 This item is dropped by all the dungeon bosses in the game, this item generates an uneasy aura while holding it, so best not hold onto it for too long. These Runes vastly increase the player's health, but at the cost of increasing Orsted’s appearance.
