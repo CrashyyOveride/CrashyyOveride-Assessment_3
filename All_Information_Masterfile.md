@@ -77,11 +77,6 @@ This greatsword can be bought in any shop.
 ### Stick
 This item can be found while exploring deep paths, venturing outside dungeons. This is a totally normal stick, with only one effect which is a debuff called 'Embarrassment' which decreases ones self image. (This effect has no true value towards anything in the game, it just why are you holding a stick?)
 
-
-
-
-
-
 ## --------Relics--------
 
 ### Orsted’s Great Rune
