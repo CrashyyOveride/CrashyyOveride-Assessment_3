@@ -8,7 +8,7 @@ ___An incremental tracking log documenting the development lifecycle milestones,
 <br>
 <br>
 
-# Journal Entry: May 17, 2026
+# Journal Entry: May 10 - May 17, 2026
 
 ## Project: Python Text-Based RPG (Prototype 1)
 
@@ -126,4 +126,33 @@ while True:
 * **Advanced OOP Architecture:** Move away from procedural dictionaries and implement advanced **Object-Oriented Programming (OOP)**. This includes creating dedicated classes for `Room`, `Player`, `Item`, and `Enemy`, utilizing **inheritance** for entity types, and using **encapsulation** to safely manage game states.
 * **GUI Development with Tkinter:** Transition the game from a command-line script into a desktop application using the **Tkinter** library.
 * **UX/UI Enhancement:** Apply core User Experience (UX) and User Interface (UI) design principles to the new interface by implementing structural typography, consistent padding, clean layouts, and visual status indicators to make navigation intuitive.
+
+# Journal Entry: May 18 - July 2, 2026
+
+## Project: Python Text-Based RPG (Human Characters & Narrative Design)
+
+### Current Progress
+Today I shifted focus from core programming mechanics to world-building and narrative design. I mapped out the initial cast of characters, factions, and encounter-based narratives that will populate the game world. 
+
+The core narrative design relies on an emergent, high-stakes system where non-player characters (NPCs) directly alter gameplay dynamics through random events. I established a balanced mix of potential allies, roaming military obstacles, and an invincible wandering boss to give the surface world a dangerous, unpredictable atmosphere.
+
+### Human Profiles
+
+* **The Exiled (Protagonist)**
+* **Ernest Blackwood** 
+* **Soldat Vanderbilt & The Northern Expedition** 
+* **Orsted Drake & The Gilded Gold** 
+* **Mary Althea**
+
+### Known Issues to Fix
+* **The Orsted Curse:** I need to design a system for dialogue tracking. If the player triggers text containing the name "Orsted" while interacting with NPCs, it must instantly trigger a negative reputation event and evict them from the zone.
+* **Mary's Choice Logic:** The persistence loop for Mary Althea requires strict state tracking. The choice to dismiss her must keep her active in the encounter pool, while the choice to heal must permanently flag her as unavailable without breaking the random encounter engine.
+* **Soldat's Progression Block:** Because Soldat's squad physically blocks dungeon access, bad random-number generation could continuously lock the player out of progression. The encounter logic needs a built-in cooldown or a "pity system" to ensure players aren't completely trapped.
+
+### Next Steps & Evolution
+* **Dynamic Route Branching:** Outline the specific narrative paths (such as seeking absolute redemption, embracing vengeance against the sky, or purely hunting for wealth) to match the Exiled's shifting motives. I was thinking of desigining 5 set out endings where the player can pick which ending or route he wants to go down. 
+* **Event-Driven Text Triggers:** Map out the exact dialogue lines and text for tavern NPCs when they react to regional rumors, Ernest’s brawls, or the mention of Orsted.
+* **The Encounter Mini-Game:** Flesh out the conceptual rules for the high-stakes survival mini-game triggered when cornered by Orsted Drake.
+* **UI Narrative Indicators:** Plan how the upcoming visual layout will telegraph faction presence, ensuring players get distinct text warnings when entering areas occupied by the Gilded Gold or the Northern Expedition Squad.
+
 
