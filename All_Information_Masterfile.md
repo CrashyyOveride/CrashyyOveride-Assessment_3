@@ -82,7 +82,8 @@ This item can be found while exploring deep paths, venturing outside dungeons. T
 ### Holy Kris (Dagger class)
 This weapon is the same as a dagger, however this one was embedded with holy divinity. This dagger can glow when it is equiped, making it an alternate light source. 
 
-### Vantablack Great Axe ()
+### Vantablack Great Axe (Axe class)
+This weapon's surface is coated in a "void" that absorbs 95% of all visible light. The eye cannot see its edges or depth. To look at the weapon is to stare into an empty black hole. This Great Axe is gained by venturing into the darkest part in Ashenhollow, where you might find it. Some say, Noids have a hand in creating these weapons but none truly knows.
 
 ## --------Relics--------
 
