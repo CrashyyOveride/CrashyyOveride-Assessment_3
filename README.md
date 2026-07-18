@@ -17,15 +17,12 @@ This project translates tactical dark-fantasy "reflexes" into strategic "resourc
 
 ## Software Architecture Blueprint
 
-### 1. Unified Class Hierarchy
+### Class Hierarchy
 * `GameObject` (Base Identity Abstract)
     * `Item` -> `Weapon` | `Armor` | `Consumable` | `Iteem`
     * `Actor` (Shared Combat Infrastructure)
         * `Player` (Inventory arrays, item consumption logic, progressive stat state)
         * `Enemy` -> `Boss` (Dynamic telegraph loops, unique item drops)
-
-### 2. Strategic World Map Layout
-The game universe operates via a discrete **Node Graph** mapped inside a nested dictionary framework:
 
 ## First Rough DRAFT of the game world building
 
