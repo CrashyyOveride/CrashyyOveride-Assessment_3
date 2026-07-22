@@ -129,19 +129,17 @@ while True:
 
 # Journal Entry: May 18 - July 2, 2026
 
-## Project: Python Text-Based RPG (Human Characters & Narrative Design)
+## Project: Python Text-Based RPG (Friendly Characters & Narrative Design)
 
 ### Current Progress
 Today I shifted focus from core programming mechanics to world-building and narrative design. I mapped out the initial cast of characters, factions, and encounter-based narratives that will populate the game world. 
 
 The core narrative design relies on an emergent, high-stakes system where non-player characters (NPCs) directly alter gameplay dynamics through random events. I established a balanced mix of potential allies, roaming military obstacles, and an invincible wandering boss to give the surface world a dangerous, unpredictable atmosphere.
 
-### Human Profiles
+### Friendly Profiles
 
 * **The Exiled (Protagonist)**
 * **Ernest Blackwood** 
-* **Soldat Vanderbilt & The Northern Expedition** 
-* **Orsted Drake & The Gilded Gold** 
 * **Mary Althea**
 
 ### Known Issues to Fix
@@ -162,4 +160,13 @@ The core narrative design relies on an emergent, high-stakes system where non-pl
 ### Current Progress
 Following the development of my friendly characters, I have shifted focus to narratibe design and hostile NPCs. The enemy roster will be highly diverse, spanning everything from human adversaries to various undead enemies. 
 
-The core idea behind my design and creation of these non-friendly characters is to give a feel into the RPG aspect of my text-based game. 
+The core idea behind my design and creation of these non-friendly characters is to give a feel into the RPG aspect of my text-based game.
+
+### Non-friendly Profiles
+
+* **Soldat Vanderbilt & The Northern Expedition** 
+* **Orsted Drake & The Gilded Gold**
+* **Orb**
+* **Noid**
+* **Drakonid**
+* **Lesser Dragon (Boss)**
