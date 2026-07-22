@@ -142,10 +142,8 @@ The core narrative design relies on an emergent, high-stakes system where non-pl
 * **Ernest Blackwood** 
 * **Mary Althea**
 
-### Known Issues to Fix
-* **The Orsted Curse:** I need to design a system for dialogue tracking. If the player triggers text containing the name "Orsted" while interacting with NPCs, it must instantly trigger a negative reputation event and evict them from the zone.
+### Known Issue to Fix
 * **Mary's Choice Logic:** The persistence loop for Mary Althea requires strict state tracking. The choice to dismiss her must keep her active in the encounter pool, while the choice to heal must permanently flag her as unavailable without breaking the random encounter engine.
-* **Soldat's Progression Block:** Because Soldat's squad physically blocks dungeon access, bad random-number generation could continuously lock the player out of progression. The encounter logic needs a built-in cooldown or a "pity system" to ensure players aren't completely trapped.
 
 ### Next Steps & Evolution
 * **Dynamic Route Branching:** Outline the specific narrative paths (such as seeking absolute redemption, embracing vengeance against the sky, or purely hunting for wealth) to match the Exiled's shifting motives. I was thinking of desigining 5 set out endings where the player can pick which ending or route he wants to go down. 
@@ -171,4 +169,6 @@ The core idea behind my design and creation of these non-friendly characters is 
 * **Drakonid**
 * **Lesser Dragon (Boss)**
 
-### 
+### Known Issues to Fix
+* **The Orsted Curse:** I need to design a system for dialogue tracking. If the player triggers text containing the name "Orsted" while interacting with NPCs, it must instantly trigger a negative reputation event and evict them from the zone.
+* **Soldat's Progression Block:** Because Soldat's squad physically blocks dungeon access, bad random-number generation could continuously lock the player out of progression. The encounter logic needs a built-in cooldown or a "pity system" to ensure players aren't completely trapped.
