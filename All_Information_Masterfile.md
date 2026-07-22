@@ -90,7 +90,8 @@ This sword has a change to drop from the lesser dragon boss in Ashenhollow. This
 
 ## --------Legacy Items--------
 
-###
+### 
+
 
 ###
 
