@@ -101,7 +101,7 @@ while True:
 
         
     if "Key" in inventory and "Potion" in inventory:
-        print("You escaped from Matej's diddy evil house!!!")
+        print("You escaped from Matej's Evil House!!!")
         break
     if "enemy_1" in rooms[currentRoom] and rooms[currentRoom]["enemy_1"] == "Monster":
         if "Potion" in inventory:
