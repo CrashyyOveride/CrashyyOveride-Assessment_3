@@ -155,4 +155,11 @@ The core narrative design relies on an emergent, high-stakes system where non-pl
 * **The Encounter Mini-Game:** Flesh out the conceptual rules for the high-stakes survival mini-game triggered when cornered by Orsted Drake.
 * **UI Narrative Indicators:** Plan how the upcoming visual layout will telegraph faction presence, ensuring players get distinct text warnings when entering areas occupied by the Gilded Gold or the Northern Expedition Squad.
 
+# Journal Entry: July 2 - July 22, 2026
 
+### Project: Python Text-Based RPG (Non-friendly Characters & Narrative Design)
+
+### Current Progress
+Following the development of my friendly characters, I have shifted focus to narratibe design and hostile NPCs. The enemy roster will be highly diverse, spanning everything from human adversaries to various undead enemies. 
+
+The core idea behind my design and creation of these non-friendly characters is to give a feel into the RPG aspect of my text-based game. 
