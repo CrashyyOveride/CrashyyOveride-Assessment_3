@@ -172,3 +172,6 @@ The core idea behind my design and creation of these non-friendly characters is 
 ### Known Issues to Fix
 * **The Orsted Curse:** I need to design a system for dialogue tracking. If the player triggers text containing the name "Orsted" while interacting with NPCs, it must instantly trigger a negative reputation event and evict them from the zone.
 * **Soldat's Progression Block:** Because Soldat's squad physically blocks dungeon access, bad random-number generation could continuously lock the player out of progression. The encounter logic needs a built-in cooldown or a "pity system" to ensure players aren't completely trapped.
+
+### Next Steps & Evolution
+* **Buidling the core code:** I will begin developing and refining the final game engine. This includes replacing my practice data with custom variables, proprietary classes, unique characters, and distinct traits.
