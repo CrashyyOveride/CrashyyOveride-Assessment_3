@@ -96,8 +96,8 @@ Left to decay in the vast fields outside of Ashenhollow, this grim weapon is inv
 ### Parthalán’s Silence (Dagger class)
 Belonged to the founder of the hideout. It was designed to slip past guards and heavy gates without making a single sound. This dagger was forged with the agonizing screams of the founder's companions after countless brutal dungeon dives. It stands as a tragic monument to the friends he lost along the way. This dagger also gives the player a guaranteed first-strike ambush attack when entering combat that completely bypasses enemy protection.
 
-### 
-
+### Replica Glacial Hilt (Special Component Class)
+A man-made imitation of the legendary hilt resting at the peak of Anatoli. This item was crafted through the generations of countless blacksmiths that came before you, each perfecting the imperfection. It leaks weak 'Polar Vortex' aura. 
 
 ## --------Relics--------
 
