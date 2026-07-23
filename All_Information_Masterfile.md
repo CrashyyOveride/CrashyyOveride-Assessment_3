@@ -102,7 +102,7 @@ A man-made imitation of the legendary hilt resting at the peak of Anatoli. This 
 ## --------Relics--------
 
 ### Matej's Old Axe
-This axe can be attained if only certain condidtions are met. 
+This axe can be attained if only certain conditions are met. 
 
 ### Orsted’s Great Rune
 This item is dropped by all the dungeon bosses in the game, this item generates an uneasy aura while holding it, so best not hold onto it for too long. These Runes vastly increase the player's health, but at the cost of increasing Orsted’s appearance.
