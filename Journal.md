@@ -183,7 +183,7 @@ The core idea behind my design and creation of these non-friendly characters is 
 ### Current Progress
 Today I pivoted from character design to engineering the loot system and weapon database. I established a tiered item structure spanning Common, Rare, and Legacy rarities. The goal is to move past static name strings and build complex items that alter game loops, unlock hidden visual zones, and manipulate combat configurations. Legacy items will serve as narrative milestones, linking lore directly to player performance.
 
-### Item Profiles
+### Item Profiles (May UPDATE or ADD new weapons as I'm developing)
 * **Dagger (Dagger Class)**
 * **Shield (Shield Class)**
 * **Longsword (Sword Class)**
