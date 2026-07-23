@@ -60,7 +60,7 @@ This town is now unlocked after beating Ashenhollow the first dungeon, it's up t
 
 # Items
 
-## --------Fallen Items--------
+## --------Common Items--------
 
 ### Dagger (Dagger class)
 This small blade can be bought in any shop.
