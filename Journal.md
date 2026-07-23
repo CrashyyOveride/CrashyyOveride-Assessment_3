@@ -153,7 +153,7 @@ The core narrative design relies on an emergent, high-stakes system where non-pl
 
 # Journal Entry: July 2 - July 22, 2026
 
-### Project: Python Text-Based RPG (Non-friendly Characters & Narrative Design)
+## Project: Python Text-Based RPG (Non-friendly Characters & Narrative Design)
 
 ### Current Progress
 Following the development of my friendly characters, I have shifted focus to narratibe design and hostile NPCs. The enemy roster will be highly diverse, spanning everything from human adversaries to various undead enemies. 
@@ -176,7 +176,7 @@ The core idea behind my design and creation of these non-friendly characters is 
 ### Next Steps & Evolution
 * **Item Tiers & Unique Mechanical Attributes:** I will begin developing my weapons and unique mechanical attributes.
 
-## Journal Entry: July 22 - August 23, 2026
+# Journal Entry: July 22 - August 23, 2026
 
 ## Project: Python Text-Based RPG (Item Tiers & Unique Mechanical Attributes)
 
