@@ -86,7 +86,7 @@ This weapon is the same as a dagger, however this one was embedded with holy div
 This weapon's surface is coated in a "void" that absorbs 95% of all visible light. The eye cannot see its edges or depth. To look at the weapon is to stare into an empty black hole. This Great Axe is gained by venturing into the darkest part in Ashenhollow, where you might find it. Some say, Noids have a hand in creating these weapons but none truly knows.
 
 ### Twinlight Odachi (Sword class)
-This sword has a chance to drop from the lesser dragon boss in Ashenhollow. This weapon was made from the lands far east, made from a star named 'Twin' that fell from the sky 20 years ago. On the base of the sword, there is a symbol '死' in a forgein language that you don't understand?
+This sword has a chance to drop from the lesser dragon boss in Ashenhollow. This weapon was made from the lands of reeds, made from a star named 'Twin' that fell from the sky some time ago. On the base of the sword, there is a symbol '死' in a forgein language that you don't understand?
 
 ## --------Legacy Items--------
 
