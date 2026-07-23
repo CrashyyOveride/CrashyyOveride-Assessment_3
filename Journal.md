@@ -174,4 +174,31 @@ The core idea behind my design and creation of these non-friendly characters is 
 * **Soldat's Progression Block:** Because Soldat's squad physically blocks dungeon access, bad random-number generation could continuously lock the player out of progression. The encounter logic needs a built-in cooldown or a "pity system" to ensure players aren't completely trapped.
 
 ### Next Steps & Evolution
+* **Item Tiers & Unique Mechanical Attributes:** I will begin developing my weapons and unique mechanical attributes.
+
+## Journal Entry: July 22 - August 23, 2026
+
+## Project: Python Text-Based RPG (Item Tiers & Unique Mechanical Attributes)
+
+### Current Progress
+Today I pivoted from character design to engineering the loot system and weapon database. I established a tiered item structure spanning Common, Rare, and Legacy rarities. The goal is to move past static name strings and build complex items that alter game loops, unlock hidden visual zones, and manipulate combat configurations. Legacy items will serve as narrative milestones, linking lore directly to player performance.
+
+### Item Profiles
+* **Dagger (Dagger Class)**
+* **Shield (Shield Class)**
+* **Longsword (Sword Class)**
+* **Greatsword (Sword Class)**
+* **Stick (Sword Class)**
+* **Holy Kris (Dagger Class)**
+* **Vantablack Great Axe (Axe Class)**
+* **Twinlight Odachi (Sword Class)**
+* **Gravewarden (Scythe Class)**
+* **Parthalán’s Silence (Dagger Class)**
+* **Replica Glacial Hilt (Special Component Class)**
+
+### Known Issues to Fix
+* **Gravewarden Visibility State:** If a player enters the vast fields without the undead state active, the engine must mask the object array. I need to make sure the item lookup function doesn't throw a key error or reveal the item prematurely during standard inventory scans.
+
+### Next Steps & Evolution
 * **Buidling the core code:** I will begin developing and refining the final game engine. This includes replacing my practice data with custom variables, proprietary classes, unique characters, and distinct traits.
+
