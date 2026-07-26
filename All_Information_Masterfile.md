@@ -7,7 +7,7 @@
 # Characters
 
 ### Exiled (You)
-One of many who have been exiled from the sky, seeking glory in exploring dungeons on the lands below. A lonely warrior who fights for his worth in each battle. His motives can change depending on what type of route the player wants to go down.
+One of many who have been exiled from the sky, seeking glory in exploring dungeons on the lands below. A lonely warrior who fights for his worth in each battle. His motives can change depending on what type of route the player wants to go down. The exilded species cannot wield magic or wild magic as something or someone is restricting them to do so.
 
 ### Ernest Blackwood
 He is a drunken fellow, always making ruffles in taverns. He is a former dungeon diver. Earning himself a name ‘Ernest the Quagmire’ for his special move, trapping enemies in sinking mud using magic.
@@ -87,6 +87,8 @@ This weapon's surface is coated in a "void" that absorbs 95% of all visible ligh
 
 ### Twinlight Odachi (Sword class)
 This sword has a chance to drop from the lesser dragon boss in Ashenhollow. This weapon was made from the lands of reeds, made from a star named 'Twin' that fell from the sky some time ago. On the base of the sword, there is a symbol '死' in a forgein language that you don't understand?
+
+### 
 
 ## --------Legacy Items--------
 
