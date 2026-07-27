@@ -20,8 +20,10 @@
                              ▼               ▼
 [Gloomwood Forest] ◄───────────────────► [ Oakhaven ] ◄───────────────────► [ Ashenhollow ]
      ▲                                  (Starting Town)        
-     │ (Heading South)
+     │ 
      ▼                         
+[Shadowsedge]
+
 
 ```
 
