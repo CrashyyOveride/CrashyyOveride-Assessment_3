@@ -76,11 +76,16 @@ This dungeon is crawling with low level enemies, but beware, this dungeon is hom
 ### Gloomwood Forest (2nd Dungeon)
 This dungeon is entered by venturing out into the deep, dark depths of the surface woods. While it feels like a standard woodland, the player slowly descends into a massive, sunken cavern system where a ecosystem thrives entirely underground. The unatural look of the underground sky is caused by unique rock formations and natural process on the cavern roof where the rock can mirror light from above the ground. However, this light is only the imitation, and is on a grey scale causing the trees here to become decayed and rotted.
 
+### 
+
 ### Parthalán Hideout (Secret Location)
 A secret cave that only can be entered through a secret word code, the time you must enter this code is at oakhavens tavern 'Blind Boar' and asking the bartender. The way to acquire this code, you need to look closely at the details when reading a certain item description. 
 
 ### Anatoli (Shout out James) (2nd Area)
 This town is now unlocked after beating Ashenhollow the first dungeon, it's up to you if you would like to travel to this location. This town is located far north up into the mountains, it's full of log cabins with one shop with resources you can buy there. This area is not a safe zone, so you can be encountered by enemies. It is fully engulfed with snow all year round, leading to the lacking amount of people in this area. Anatoli has a secret tall tale, which explains the effects of the ever-lasting winter; "High upon thee highest point on the highest mountain, lay rest a great being. It's hidden within the clouds, unable to be viewed from down here." This great being is the main reason why this town is stuck inside a winter state. The Ice covered Longsword, and it's hilt emits 'Polar Vortex' which is far beyond subzero. It gets warmer as it travels down the mountain face, so it does get to a point of livability. This town is also where Soldat Vanderbilt was born. 
+
+### Shadowsedge (3rd Area)
+Perched on the edge of the Gloomwood forest, Shadowsedge serves as a vital frontier outpost rahter than a permanent home. Travelers who come this far to this bleak settlement call it a glorified checkpoint. To keep the forest's rot infected enemies at bat, the outpost has eight-meter-high walls encircling the town hall and the local population. The buildings are made from the very greyscale wood that haunts the Gloomwood forest dungeon, as only through intense purification process does this corrupted wood become stable enough to build with. 
 
 ---
 
