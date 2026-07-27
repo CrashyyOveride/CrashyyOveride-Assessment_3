@@ -89,7 +89,7 @@ This weapon's surface is coated in a "void" that absorbs 95% of all visible ligh
 This sword has a chance to drop from the lesser dragon boss in Ashenhollow. This weapon was made from the lands of reeds, made from a star named 'Twin' that fell from the sky some time ago. On the base of the sword, there is a symbol '死' in a forgein language that you don't understand?
 
 ### Gilded Thorn (Sword Class)
-This sword is the most prized item that the Gilded Gold has. It's hilt is covered in pure gold and is rumoured to be made out of harden roses of 
+This sword is the most prized item that the Gilded Gold has. It's hilt is covered in pure gold and is rumoured to be made out of thin sharp stems of roses.  
 
 ### 
 
