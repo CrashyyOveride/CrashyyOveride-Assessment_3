@@ -7,14 +7,17 @@
 # Map (Draft)
 
 ```text
-                     ▲ [ Anatoli ]
-                     │ 
-                     ▼
-       { This is where you fall }
-                     ▲
-                     │ 
-                     ▼
-[ Oakhaven ] ◄───────► [ Ashenhollow ]
+                    [ Anatoli ]
+                         ▲ 
+                         │ 
+                         ▼
+             { This is where you fall }
+                         ▲
+[Parthalán Hideout]      │
+ (Sercet Location)       │
+         ▲               │
+         │               ▼
+  [ Oakhaven ] ◄───────► [ Ashenhollow ]
 (Starting Town)        
      ▲
      │ (Heading South)
