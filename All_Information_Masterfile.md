@@ -16,8 +16,9 @@
 [Parthalán Hideout]      │
  (Sercet Location)       │
          ▲               │
-         │               ▼
-  [ Oakhaven ] ◄───────► [ Ashenhollow ]
+         │               │
+         ▼               ▼
+  [ Oakhaven ] ◄───────────────────► [ Ashenhollow ]
 (Starting Town)        
      ▲
      │ (Heading South)
