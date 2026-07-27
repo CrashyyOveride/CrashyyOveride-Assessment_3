@@ -7,22 +7,22 @@
 # Map (Draft)
 
 ```text
-                    [ Anatoli ]
-                         ▲ 
-                         │ 
-                         ▼
-             { This is where you fall }
-                         ▲
-[Parthalán Hideout]      │
- (Sercet Location)       │
-         ▲               │
-         │               │
-         ▼               ▼
-  [ Oakhaven ] ◄───────────────────► [ Ashenhollow ]
-(Starting Town)        
-     ▲
+                                        [ Anatoli ]
+                                             ▲ 
+                                             │ 
+                                             ▼
+                                 { This is where you fall }
+                                             ▲
+                    [Parthalán Hideout]      │
+                     (Sercet Location)       │
+                             ▲               │
+                             │               │
+                             ▼               ▼
+[Gloomwood Forest] ◄───────────────────► [ Oakhaven ] ◄───────────────────► [ Ashenhollow ]
+     ▲                                  (Starting Town)        
      │ (Heading South)
-     ▼
+     ▼                         
+
 ```
 
 
@@ -74,7 +74,7 @@ This area is the starting point, where the Exiled (You) lands, it’s filled wit
 This dungeon is crawling with low level enemies, but beware, this dungeon is home to the lesser dragon, the most powerful enemy in it. This dungeon allows you to play while giving you a tutorial, combining the aspects of full fledged level and having a sort of taste of the rest of the game. 
 
 ### Gloomwood Forest (2nd Dungeon)
-This dungeon is entered by benturing out into the deep, dark depths of the surface woods. While it feels like a standard woodland, the player slowly descends into a massive, sunken cavern system where a ecosystem thrives entirely underground. The unatural look of the underground sky is caused by unique rock formations and natural process on the cavern roof where the rock can mirror light from above the ground. However, this light is only the imitation, and is on a grey scale causing the trees here to become decayed and rotted.
+This dungeon is entered by venturing out into the deep, dark depths of the surface woods. While it feels like a standard woodland, the player slowly descends into a massive, sunken cavern system where a ecosystem thrives entirely underground. The unatural look of the underground sky is caused by unique rock formations and natural process on the cavern roof where the rock can mirror light from above the ground. However, this light is only the imitation, and is on a grey scale causing the trees here to become decayed and rotted.
 
 ### Parthalán Hideout (Secret Location)
 A secret cave that only can be entered through a secret word code, the time you must enter this code is at oakhavens tavern 'Blind Boar' and asking the bartender. The way to acquire this code, you need to look closely at the details when reading a certain item description. 
