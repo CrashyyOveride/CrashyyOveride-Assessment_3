@@ -81,8 +81,8 @@ Found in any levels of a dungeon. This orb is a pure black ball, compressed of h
 ### Deeproot Warden
 A wandering titan of a man, he navigates the forest shallows without the burden of roots. Overgrown vines wrap tightly around his armour, a legendary warden rumoured to be forged from the ancient, unyielding woof of the First Generation of Gloomwood trees. He can't die truly, becuase his soul was consumed by the forest. You can talk to him after you have defeated him, as he will become a friendly npc. 
 
-
-###
+### Shadowroot Spirits
+These enemies was once a noble guardians of the deep woods, they banded together and attempted to swallow the spreading gloomroot corruption to save it's sacred forest. However, it failed and all the Spirits turned into shadows and becoming enemies to all who try to enter the forest. 
 
 ###
 
