@@ -23,6 +23,14 @@
      │ 
      ▼                         
 [Shadowsedge]
+     │
+     │
+     │
+     │
+     │
+     │
+     ▼
+[]
 
 
 ```
@@ -54,7 +62,7 @@ This character is one of few characters that will help you along your venture. S
 # Dungeon 1 Enemies & Boss
 
 ### Orb
-Found in upper levels of a dungeon. This orb is a pure black ball, compressed of high levels of wild magic, nearly uncontrollable by a mere human. Orb is the most common enemy you will encounter within a dungeon. Although the weakest by far of all the enemies, Orb is an unruly and unpredictable enemy, he may become stronger with the right conditions.
+Found in any levels of a dungeon. This orb is a pure black ball, compressed of high levels of wild magic, nearly uncontrollable by a mere human. Orb is the most common enemy you will encounter within a dungeon. Although the weakest by far of all the enemies, Orb is an unruly and unpredictable enemy, he may become stronger with the right conditions.
 
 ### Noid
 Found in the upper to middle levels of a dungeon. This enemy doesn’t like to reveal itself, however slight glimpses have been seen by other dungeon divers, describing them as a nightmarish figure. This enemy travels in a pack of 3-4, making it hard to dodge incoming attacks. These creatures do not like light, they will actively avoid a light source. These enemies tend to try to communicate to you, do not communicate back.
@@ -64,6 +72,18 @@ Found in the middle to lower levels of a dungeon. This enemy has shiny scales, a
 
 ### Lesser Dragon (Boss)
 This is the final boss of the first dungeon, this enemy is only accessible through completing each and every level of the dungeon. This boss will act as a tutorial, and a real fight as the fights with normal enemies are not the same for a dungeon boss. This being has immense wild magic, as only dragons can wield this type of magic and control it, this dragon isn’t a true dragon, so their wild magic attack may be unpredictable or encumbered so that the player can target its special weakness. After this fight, this lesser dragon will be “felled” and shall not spawn again during the playthrough. This lesser dragon shall give the Exiled its first relic which is called ‘Orsted’s Great Rune.’
+
+# Dungeon 2 Enemies & Boss
+
+### Orb
+Found in any levels of a dungeon. This orb is a pure black ball, compressed of high levels of wild magic, nearly uncontrollable by a mere human. Orb is the most common enemy you will encounter within a dungeon. Although the weakest by far of all the enemies, Orb is an unruly and unpredictable enemy, he may become stronger with the right conditions.
+
+### 
+
+###
+
+###
+
 
 ---
 
