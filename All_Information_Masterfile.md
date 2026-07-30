@@ -78,7 +78,11 @@ This is the final boss of the first dungeon, this enemy is only accessible throu
 ### Orb
 Found in any levels of a dungeon. This orb is a pure black ball, compressed of high levels of wild magic, nearly uncontrollable by a mere human. Orb is the most common enemy you will encounter within a dungeon. Although the weakest by far of all the enemies, Orb is an unruly and unpredictable enemy, he may become stronger with the right conditions.
 
-### 
+### Deeproot Warden
+A wandering titan, he navigates the forest shallows without the burden of roots. Overgrown vines wrap tightly around his armor, a legendary warden rumored to be forged from the ancient, unyielding wood of the First Gloomwood trees.
+
+A wandering titan of a man, he navigates the forest shallows without the burden of roots. Overgrown vines wrap tightly around his armour, a legendary warden rumoured to be forged from the ancient, unyielding woof of the First Generation of Gloomwood trees. He can't die truely, becuase his soul was consumed by the forest.
+
 
 ###
 
