@@ -11,7 +11,7 @@
                                              ▲ 
                                              │ 
                                              ▼
-                                 { This is where you fall }
+                                  { Starting Drop Zone }
                                              ▲
                     [Parthalán Hideout]      │
                      (Sercet Location)       │
