@@ -102,7 +102,11 @@ This dungeon is crawling with low level enemies, but beware, this dungeon is hom
 ### Gloomwood Forest (2nd Dungeon)
 This dungeon is entered by venturing out into the deep, dark depths of the surface woods. While it feels like a standard woodland, the player slowly descends into a massive, sunken cavern system where a ecosystem thrives entirely underground. The unatural look of the underground sky is caused by unique rock formations and natural process on the cavern roof where the rock can mirror light from above the ground. However, this light is only the imitation, and is on a grey scale causing the trees here to become decayed and rotted. 
 
-### 
+### Sky Lift (4th Area)
+This lift is the grand entrance to the lands high up upon the clouds. You feel a sense of familiarity however you can't quite understand where it's coming from? This is opened once all dungeons are cleared and you have at least 2 of Orsted Great Runes.  
+
+### Sky Temple (5th Area)
+Once leaving the earthly plain of existence, the lift is destroyed by a fireball that came from the highest peak of these clouds. Now unable to go back, you must continue forward to the highest point, travelling by ruins that you can interact with. 
 
 ### Parthalán Hideout (Secret Location)
 A secret cave that only can be entered through a secret word code, the time you must enter this code is at oakhavens tavern 'Blind Boar' and asking the bartender. The way to acquire this code, you need to look closely at the details when reading a certain item description. 
