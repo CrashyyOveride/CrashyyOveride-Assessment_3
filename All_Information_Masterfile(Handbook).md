@@ -88,6 +88,9 @@ These enemies was once a noble guardians of the deep woods, they banded together
 ### Draconic Gloomtree Sentinel (Boss)
 The horrors of what a great dragon can become, rotted by the gloomwood forest, it's grand appearance severely damaged. This great dragon has more control over wild magic then lesser dragons, however they can only use it for a moment. This great dragon has been infused with one of the founding trees of the forest, causing it to be malformed. Rather than magic, the draconic Gloomtree sentinel roars purple rot fluid, which inflicts 'Death Rot.' This boss is much harder to get 'tells' from and is considered a late game boss. Once defeating this boss, you are able to access shadowsedge. 
 
+# Dungeon 3 Enemies & Boss
+
+
 
 ---
 
@@ -116,6 +119,8 @@ This town is now unlocked after beating Ashenhollow the first dungeon, it's up t
 
 ### Shadowsedge (3rd Area)
 Perched on the edge of the Gloomwood forest, Shadowsedge serves as a vital frontier outpost rahter than a permanent home. Travelers who come this far to this bleak settlement call it a glorified checkpoint. To keep the forest's rot infected enemies at bat, the outpost has eight-meter-high walls encircling the town hall and the local population. The buildings are made from the very greyscale wood that haunts the Gloomwood forest dungeon, as only through intense purification process does this corrupted wood become stable enough to build with. 
+
+### Ventus Azura (3rd Dungeon and Final Dungeon)
 
 ---
 
