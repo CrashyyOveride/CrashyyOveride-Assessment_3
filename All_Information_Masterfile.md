@@ -18,7 +18,7 @@
                              ▲               │
                              │               │
                              ▼               ▼
-[Gloomwood Forest] ◄───────────────────► [ Oakhaven ] ◄───────────────────► [ Ashenhollow ]
+[Gloomwood Forest] ◄───────────────────► [ Oakhaven ] ◄───────────────────► Ashenhollow ]
      ▲                                  (Starting Town)        
      │ 
      ▼                         
@@ -84,7 +84,8 @@ A wandering titan of a man, he navigates the forest shallows without the burden 
 ### Shadowroot Spirits
 These enemies was once a noble guardians of the deep woods, they banded together and attempted to swallow the spreading gloomroot corruption to save it's sacred forest. However, it failed and all the Spirits turned into shadows and becoming enemies to all who try to enter the forest. 
 
-###
+### Draconic Gloomtree Sentinel (Boss)
+The horrors of what a great dragon can become, rotted by the gloomwood forest, it's grand appearance severely damaged. This great dragon has more control over wild magic then lesser dragons, however they can only use it for a moment. This great dragon has been infused with one of the founding trees of the forest, causing it to be malformed. Rather than magic, the draconic Gloomtree sentinel roars purple rot fluid, which inflicts 'Death Rot.' This boss is much harder to get 'tells' from and is considered a late game boss. Once defeating this boss, you are able to access shadowsedge. 
 
 
 ---
@@ -98,7 +99,7 @@ This area is the starting point, where the Exiled (You) lands, it’s filled wit
 This dungeon is crawling with low level enemies, but beware, this dungeon is home to the lesser dragon, the most powerful enemy in it. This dungeon allows you to play while giving you a tutorial, combining the aspects of full fledged level and having a sort of taste of the rest of the game. 
 
 ### Gloomwood Forest (2nd Dungeon)
-This dungeon is entered by venturing out into the deep, dark depths of the surface woods. While it feels like a standard woodland, the player slowly descends into a massive, sunken cavern system where a ecosystem thrives entirely underground. The unatural look of the underground sky is caused by unique rock formations and natural process on the cavern roof where the rock can mirror light from above the ground. However, this light is only the imitation, and is on a grey scale causing the trees here to become decayed and rotted.
+This dungeon is entered by venturing out into the deep, dark depths of the surface woods. While it feels like a standard woodland, the player slowly descends into a massive, sunken cavern system where a ecosystem thrives entirely underground. The unatural look of the underground sky is caused by unique rock formations and natural process on the cavern roof where the rock can mirror light from above the ground. However, this light is only the imitation, and is on a grey scale causing the trees here to become decayed and rotted. 
 
 ### 
 
