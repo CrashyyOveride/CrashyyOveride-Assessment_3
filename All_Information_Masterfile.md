@@ -29,7 +29,7 @@
      │
      │
      │
-     ▼      (Auto-Locked)
+     ▼        (Auto-Locked)
 [Sky Lift] ───────────────────► [Sky Temple] ───────────────────► [Ventus Azura]
 
 
