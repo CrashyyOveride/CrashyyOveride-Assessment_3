@@ -121,6 +121,7 @@ This town is now unlocked after beating Ashenhollow the first dungeon, it's up t
 Perched on the edge of the Gloomwood forest, Shadowsedge serves as a vital frontier outpost rahter than a permanent home. Travelers who come this far to this bleak settlement call it a glorified checkpoint. To keep the forest's rot infected enemies at bat, the outpost has eight-meter-high walls encircling the town hall and the local population. The buildings are made from the very greyscale wood that haunts the Gloomwood forest dungeon, as only through intense purification process does this corrupted wood become stable enough to build with. 
 
 ### Ventus Azura (3rd Dungeon and Final Dungeon)
+At the absolute apex of the clouds sits Ventus Azura, the Sky fortress. It is not empty with ancient symbols and signs, but an active home to the most horrifying beings that are allowed on this plain of existence: True Dragons. They are the only beings capable of mastering and using wild magic at will. These dragons are fierce and massive, not bound by time or space. They stand at sizes that only can be perceived fully from another stratum.  
 
 ---
 
