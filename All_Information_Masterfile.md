@@ -18,7 +18,7 @@
                              ▲               │
                              │               │
                              ▼               ▼
-[Gloomwood Forest] ◄───────────────────► [ Oakhaven ] ◄───────────────────► Ashenhollow ]
+[Gloomwood Forest] ◄───────────────────► [ Oakhaven ] ◄───────────────────► [Ashenhollow]
      ▲                                  (Starting Town)        
      │ 
      ▼                         
@@ -29,8 +29,9 @@
      │
      │
      │
-     ▼
-[]
+     ▼      (Auto-Locked)
+[Sky Lift] ───────────────────► [Sky Temple] ───────────────────► [Ventus Azura]
+
 
 
 ```
