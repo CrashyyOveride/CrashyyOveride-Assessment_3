@@ -1,3 +1,72 @@
+class Area:
+    def __init__(self, name: str, description: str, zone_type: str = "Standard"):
+        self.name = name
+        self.description = description
+        self.zone_type = zone_type
+        self.exits = {}
+        self.items = []
+        self.is_safe = True
+
+    def set_exits(self, north=None, south=None, east=None, west=None):
+        if north: self.exits["north"] = north
+        if south: self.exits["south"] = south
+        if east: self.exits["east"] = east
+        if west: self.exits["west"] = west
+
+    def get_details(self):
+        available_directions = ", ".join(self.exits.keys()).upper() if self.exits else "NONE"
+        
+        details = (
+            "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"LOCATION: {self.name.upper()}\n"
+            "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"{self.description}\n"
+            "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n"
+            f"PATHWAYS: [ {available_directions} ]\n\n"
+            "AVAILABLE COMMANDS:\n"
+            "   • go [north/south/east/west]  (Travel zones)\n"
+            "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+        )
+        return details
+    
+class SecretArea(Area):
+    def __init__(self, name: str, description: str, passcode: str):
+        super().__init__(name, description, "Secret")
+        self.passcode = passcode
+        self.is_locked = True  
+
+    def get_details(self):
+        if self.is_locked:
+            details = (
+                "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                f"LOCATION: ??? [ LOCKED ]\n"
+                "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                "This location is protected by a magical combination lock.\n"
+                "You must enter the correct passcode to breach the barrier.\n"
+                "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n"
+                "AVAILABLE COMMANDS:\n"
+                " unlock [passcode] (Attempt to bypass lock)\n"
+                " go south (Return to safety)\n"
+                "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+            )
+            return details
+        return super().get_details()
+
+
+class Dungeon(Area):
+    def __init__(self, name: str, description: str, danger_level: int, enemies: list):
+        super().__init__(name, description, "Dungeon")
+        self.danger_level = danger_level
+        self.is_safe = False  
+        self.enemies = enemies       
+        self.current_enemy_index = 0
+
+    def get_current_enemy(self):
+        if self.current_enemy_index < len(self.enemies):
+            return self.enemies[self.current_enemy_index]
+        return None
+
+
 class Character:
     def __init__(self, name: str, health: int, attack_power: int):
         self.name = name
@@ -77,7 +146,8 @@ shadow = Enemy(name="Shadowroot Spirits", health=40, attack_power=30, is_boss=Fa
 draconic = Enemy(name="Draconic Gloomtree Sentinel", health=550, attack_power=45, is_boss=True)
 
 ### Dungeon 3 Monsters & Boss
- 
+
+
 ### HERE ARE ALL WEAPONS :)))
 
 ### Common Weapons
@@ -104,3 +174,47 @@ goditem = Relic(name="Matej's Old Axe", bonus_damage=999999999, rarity="Relic", 
 greatrune = Relic(name="Orsted's Great Rune", bonus_damage=0, rarity="Relic", description="This item is dropped by all the dungeon bosses in the game, this item generates an uneasy aura while holding it, so best not hold onto it for too long. These Runes vastly increase the player's health, but at the cost of increasing Orsted’s appearance.", orsted_apperance=True, is_relic=True)
 
 
+### HERE ARE ALL THE LOCATIONS
+
+### Sercet Locations
+
+parthalanhideout = Area(name="Sercet Location", description="####", zone_type="Standard" )
+
+### Non dungeon points
+
+landing_zone = Area(name="Drop Zone", description="####", zone_type="Standard")
+oakhaven = Area(name="Oakhaven", description="This area is the starting point, where the Exiled (You) lands, it’s filled with busy streets and a large wall circling around the town. It’s home to The Blind Boar which is a famous chain of taverns throughout the lands. It’s a civilian town, so not much to do but to gather information about the dungeon that resides near the town. This town is also home to massive ruins that the town is built around. One of the most famous landmarks in this town is a huge stone called 'Pathfinder,' as it said touching this rock, provides luck in finding your way back home.", zone_type="Standard")
+anatoli = Area(name="Anatoli Mountain Base", description="This town is now unlocked after beating Ashenhollow the first dungeon, it's up to you if you would like to travel to this location. This town is located far north up into the mountains, it's full of log cabins with one shop with resources you can buy there. This area is not a safe zone, so you can be encountered by enemies. It is fully engulfed with snow all year round, leading to the lacking amount of people in this area. Anatoli has a secret tall tale, which explains the effects of the ever-lasting winter; 'High upon thee highest point on the highest mountain, lay rest a great being. It's hidden within the clouds, unable to be viewed from down here.' This great being is the main reason why this town is stuck inside a winter state. The Ice covered Longsword, and it's hilt emits 'Polar Vortex' which is far beyond subzero. It gets warmer as it travels down the mountain face, so it does get to a point of livability. This town is also where Soldat Vanderbilt was born.", zone_type="North")
+shadowsedge = Area(name="Shadowsegde", description="Perched on the edge of the Gloomwood forest, Shadowsedge serves as a vital frontier outpost rahter than a permanent home. Travelers who come this far to this bleak settlement call it a glorified checkpoint. To keep the forest's rot infected enemies at bat, the outpost has eight-meter-high walls encircling the town hall and the local population. The buildings are made from the very greyscale wood that haunts the Gloomwood forest dungeon, as only through intense purification process does this corrupted wood become stable enough to build with.", zone_type="Standard")
+skylift = Area(name="Sky Lift", description="This lift is the grand entrance to the lands high up upon the clouds. You feel a sense of familiarity however you can't quite understand where it's coming from? This is opened once all dungeons are cleared and you have at least 2 of Orsted Great Runes.", zone_type="Standard")
+skytemple = Area(name="Sky Temple", description="Once leaving the earthly plain of existence, the lift is destroyed by a fireball that came from the highest peak of these clouds. Now unable to go back, you must continue forward to the highest point, travelling by ruins that you can interact with.", zone_type="Standard")
+blindboartavern = Area(name="The Blind Boar Tavern",description="The air is thick with the scent of roasted meat and stale ale. In the corner, a fireplace crackles softly. Locals gather around heavy oak tables, whispering about dangerous dungeon dives.")
+
+### Dungeon 1
+ashenhollow = Dungeon(name="Ashenhollow", description="This dungeon is crawling with low level enemies, but beware, this dungeon is home to the lesser dragon, the most powerful enemy in it.", danger_level=1, enemies=[orb, noid, lesser_dragon])
+
+### Dungeon 2
+gloomwood = Dungeon(name="Gloomwood Forest", description="The unatural look of the underground sky is caused by unique rock formations and natural process on the cavern roof where the rock can mirror light from above the ground. However, this light is only the imitation, and is on a grey scale causing the trees here to become decayed and rotted.", danger_level=2, enemies=[warden, shadow, draconic])
+
+### Dungeon 3
+ventusazura = Area(name="Ventus Azura", description="At the absolute apex of the clouds sits Ventus Azura, the Sky fortress. It is not empty with ancient symbols and signs, but an active home to the most horrifying beings that are allowed on this plain of existence: True Dragons. They are the only beings capable of mastering and using wild magic at will. These dragons are fierce and massive, not bound by time or space. They stand at sizes that only can be perceived fully from another stratum.")
+
+anatoli.set_exits(south=landing_zone)
+landing_zone.set_exits(north=anatoli, south=oakhaven)
+oakhaven.set_exits(north=landing_zone, south=blindboartavern, west=gloomwood, east=ashenhollow)
+blindboartavern.set_exits(north=oakhaven)
+
+oakhaven.set_exits(north=landing_zone, west=gloomwood, east=ashenhollow)
+ashenhollow.set_exits(west=oakhaven)
+
+gloomwood.set_exits(east=oakhaven, north=parthalanhideout, south=shadowsedge)
+parthalanhideout.set_exits(south=gloomwood)
+
+shadowsedge.set_exits(north=gloomwood, south=skylift)
+skylift.set_exits(north=shadowsedge)
+
+# NOTE: To implement the "(Auto-Locked)" mechanic, we add 'east=sky_temple' here. 
+# You can later block this direction in handle_gameplay_command using a condition!
+skylift.set_exits(north=shadowsedge, east=skytemple)
+skytemple.set_exits(west=skylift, east=ventusazura)
+ventusazura.set_exits(west=skytemple)
