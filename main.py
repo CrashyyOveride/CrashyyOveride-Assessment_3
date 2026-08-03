@@ -108,6 +108,15 @@ class Weapon:
         self.name = name
         self.bonus_damage = bonus_damage
         self.rarity = rarity
+        self.is_relic = False
+        self.orsted_apperance = False
+
+class Relic(Weapon):
+    def __init__(self, name: str, bonus_damage: int, rarity: str, orsted_apperance: bool, is_relic: bool):
+        super().__init__(name, bonus_damage, rarity)
+
+        self.is_relic = is_relic
+        self.orsted_apperance = orsted_apperance
 
 ### HERE ARE ALL CHARACTERS :)))
 
@@ -126,8 +135,37 @@ orb = Enemy(name="Orb", health=20, attack_power=5, is_boss=False)
 noid = Enemy(name="Noid", health=45, attack_power=12, is_boss=False)
 lesser_dragon = Enemy(name="Lesser Dragon", health=350, attack_power=40, is_boss=True)
 
+### Dungeon 2 Monsters & Boss
+warden = Enemy(name="Deeproot Warden", health=90, attack_power=25, is_boss=False)
+shadow = Enemy(name="Shadowroot Spirits", health=40, attack_power=30, is_boss=False)
+draconic = Enemy(name="Draconic Gloomtree Sentinel", health=550, attack_power=45, is_boss=True)
 
+### Dungeon 3 Monsters & Boss
 
+### HERE ARE ALL WEAPONS :)))
+
+### Common Weapons
+dagger = Weapon(name="Dagger", bonus_damage=5, rarity="Common")
+shield = Weapon(name="Shield", bonus_damage=5, rarity="Common")
+longsword = Weapon(name="Longsword", bonus_damage=5, rarity="Common")
+greatsword = Weapon(name="Greatsword", bonus_damage=5, rarity="Common")
+stick = Weapon(name="Stick", bonus_damage=0, rarity="Common")
+
+### Rare Weapons
+kris = Weapon(name="Holy Kris", bonus_damage=10, rarity="Rare")
+vantablack = Weapon(name="Vantablack Great Axe", bonus_damage=15, rarity="Rare")
+twinlight = Weapon(name="Twinlight Odachi", bonus_damage=20, rarity="Rare")
+thorn = Weapon(name="Gilded Thorn", bonus_damage=20, rarity="Rare")
+
+### Legacy Weapons
+gravewarden = Weapon(name="Gravewarden", bonus_damage=50, rarity="Legacy")
+silencedagger = Weapon(name="Parthanlán's Silence", bonus_damage=50, rarity="Legacy")
+glacialhilt = Weapon(name="Replica Glacial Hilt", bonus_damage=20, rarity="Legacy")
+
+### Relics
+
+goditem = Relic(name="Matej's Old Axe", bonus_damage=999999999, rarity="Relic", orsted_apperance=False, is_relic=False)
+greatrune = Relic(name="Orsted's Great Rune", bonus_damage=0, rarity="Relic", orsted_apperance=True, is_relic=True)
 
 
 
