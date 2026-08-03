@@ -24,7 +24,7 @@ class Area:
             "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n"
             f"PATHWAYS: [ {available_directions} ]\n\n"
             "AVAILABLE COMMANDS:\n"
-            "   • go [north/south/east/west]  (Travel zones)\n"
+            " go [north/south/east/west]  (Travel zones)\n"
             "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
         )
         return details
