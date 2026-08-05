@@ -343,18 +343,6 @@ lesser_dragon = Enemy(name="Lesser Dragon", health=350, attack_power=40, is_boss
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 if __name__ == "__main__":
     window = tk.Tk()
     app = Game(window)
@@ -366,5 +354,38 @@ if __name__ == "__main__":
 
 ### Next Steps & Evolution
 * **Building the core code:** I will begin developing and refining the final combat state machine aswell as location and travel. This includes binding the Tkinter entry field data directly to dynamic character choice variables, linking weapon object stat modifiers directly to ally attacks, and converting static menu panels into scrolling narrative text feeds.
+
+# Journal Entry: August 3 - August 5 2026
+
+## Project: Python Text-Based RPG (Debugging Inventory Interface)
+
+### Current Progress
+Today was spent debugging a critical Tkinter interface crash occurring inside the main gameplay command loop. While attempting to display the player's current items on the UI, the engine threw a fatal `AttributeError`. The application failed to parse the text layout on line 258 when updating `self.menu_label.config`.
+
+### The Problem
+* **The Error:** `AttributeError: 'Inventory' object has no attribute 'list_items'`
+* **The Culprit:** Even though `list_items(self)` is written into the `Inventory` source code, the runtime environment cannot access it. It is a runtime error.
+
+### Code Resolution & Verification
+I verified that the `list_items` logic is functionally sound. The standard structure must strictly mirror the blueprint below to prevent scope isolation:
+
+```python
+Exception in Tkinter callback
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/tkinter/__init__.py", line 2088, in __call__
+    return self.func(*args)
+           ~~~~~~~~~^^^^^^^
+  File "/Applications/Python 3.14/game/main.py", line 80, in route_input
+    self.handle_gameplay_command(raw_text)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/Applications/Python 3.14/game/main.py", line 258, in handle_gameplay_command
+    self.menu_label.config(text=self.player_inventory.list_items() + "\n\nType 'menu' to return.")
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Inventory' object has no attribute 'list_items'
+```
+
+### Next Steps & Evolution
+* **Integrate Weapon Profiles:** Once the string rendering is stable, I will begin populating the active inventory pools with the newly generated weapon data arrays, starting with the baseline *Dagger* and *Longsword* profiles.
+
 
 
