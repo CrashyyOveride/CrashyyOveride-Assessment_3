@@ -146,7 +146,7 @@ The core narrative design relies on an emergent, high-stakes system where non-pl
 * **Mary's Choice Logic:** The persistence loop for Mary Althea requires strict state tracking. The choice to dismiss her must keep her active in the encounter pool, while the choice to heal must permanently flag her as unavailable without breaking the random encounter engine.
 
 ### Next Steps & Evolution
-* **Dynamic Route Branching:** Outline the specific narrative paths (such as seeking absolute redemption, embracing vengeance against the sky, or purely hunting for wealth) to match the Exiled's shifting motives. I was thinking of desigining 5 set out endings where the player can pick which ending or route he wants to go down. 
+* **Dynamic Route Branching:** Outline the specific narrative paths (such as seeking absolute redemption, embracing vengeance against the sky, or purely hunting for wealth) to match the Exiled's shifting motives. 
 * **Event-Driven Text Triggers:** Map out the exact dialogue lines and text for tavern NPCs when they react to regional rumors, Ernest’s brawls, or the mention of Orsted.
 * **The Encounter Mini-Game:** Flesh out the conceptual rules for the high-stakes survival mini-game triggered when cornered by Orsted Drake.
 * **UI Narrative Indicators:** Plan how the upcoming visual layout will telegraph faction presence, ensuring players get distinct text warnings when entering areas occupied by the Gilded Gold or the Northern Expedition Squad.
