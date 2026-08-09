@@ -3,7 +3,7 @@ import game_logic
 import combat
 from items import Inventory
 from tkinter import font as tkfont
-
+import random
 
 class Game:
 
@@ -14,7 +14,6 @@ class Game:
         self.root.configure(bg="black")
         self.root.attributes("-fullscreen", True)
 
-        # Escape closes the game.
         self.root.bind(
             "<Escape>",
             lambda event: self.root.destroy()
@@ -32,7 +31,6 @@ class Game:
             max_slots=20
         )
 
-        # Keep the player and inventory linked.
         game_logic.player.inventory = (
             self.player_inventory
         )
@@ -40,6 +38,31 @@ class Game:
         self.current_npc = None
         self.index_frame = None
         self.index_text = None
+
+        self.story_pages = [
+            (
+                "THE EXILED\n\n"
+                "The world you once knew is no longer the same.\n\n"
+                "You have fallen from the heavens above.\n\n"
+                "Your past may be lost.\n\n"
+                "You are known only as the Exiled.\n\n"
+                "A wanderer with no home, no title, and no clear memory.\n\n"
+                "Arise ye, Exiled.\n\n"
+                "Step beyond the gates of life and death.\n\n"
+                "And discover what waits beyond the skies."
+            ),
+
+            (
+                "YOUR JOURNEY\n\n"
+                "Explore the world.\n\n"
+                "Defeat the dungeons.\n\n"
+                "Discover weapons and items.\n\n"
+                "Uncover the truth behind the world.\n\n"
+                "Your story begins now."
+            )
+        ]
+
+        self.story_page = 0
 
         self.default_menu = (
             "                                           \n"
@@ -130,7 +153,6 @@ class Game:
             tk.END
         )
 
-        # Stops empty commands from causing errors.
         if not raw_text:
 
             if self.game_state == "gameplay":
@@ -160,6 +182,10 @@ class Game:
                     )
                 )
 
+            elif self.game_state == "story":
+
+                self.next_story_page()
+
             else:
 
                 self.menu_label.config(
@@ -168,10 +194,15 @@ class Game:
 
             return
 
-        # Sends input to the right part of the game.
         if self.game_state == "menu":
 
             self.handle_menu_choice(
+                raw_text
+            )
+
+        elif self.game_state == "story":
+
+            self.handle_story_input(
                 raw_text
             )
 
@@ -200,12 +231,15 @@ class Game:
 
         if choice == "1":
 
-            self.game_state = "gameplay"
+            self.game_state = "story"
+            self.story_page = 0
 
             self._hide_index_if_shown()
 
             self.menu_label.config(
-                text=self.current_area.get_details()
+                text=self.story_pages[self.story_page]
+                + "\n\n"
+                + "Press Enter to continue."
             )
 
         elif choice == "2":
@@ -258,6 +292,50 @@ class Game:
                     "Please select 1, 2, 3, or 4."
                 )
             )
+
+    def handle_story_input(self, choice):
+
+        if choice == "0":
+
+            self.game_state = "menu"
+            self.story_page = 0
+
+            self.menu_label.config(
+                text=self.default_menu
+            )
+
+            return
+
+        self.next_story_page()
+
+    def next_story_page(self):
+
+        if self.game_state != "story":
+            return
+
+        self.story_page += 1
+
+        if self.story_page >= len(self.story_pages):
+
+            self.game_state = "gameplay"
+            self.story_page = 0
+
+            self.current_area = game_logic.landing_zone
+            self.last_safe_area = game_logic.landing_zone
+
+            self.menu_label.config(
+                text=self.current_area.get_details()
+            )
+
+            return
+
+        self.menu_label.config(
+            text=(
+                self.story_pages[self.story_page]
+                + "\n\n"
+                + "Press Enter to continue."
+            )
+        )
 
     def _hide_index_if_shown(self):
 
@@ -381,7 +459,6 @@ class Game:
         enemies = []
         locations = []
 
-        # Find all the objects for the index.
         for name, obj in vars(game_logic).items():
 
             if name.startswith("_"):
@@ -637,6 +714,29 @@ class Game:
                 False
             ):
 
+                if (
+                    game_logic.gravewarden
+                    not in self.player_inventory.items
+                    and game_logic.gravewarden
+                    not in self.current_area.items
+                    and random.random() < 0.05
+                ):
+
+                    self.current_area.add_item(
+                        game_logic.gravewarden
+                    )
+
+                    self.menu_label.config(
+                        text=(
+                            "You kneel and pray.\n\n"
+                            "Something ancient answers your prayer.\n\n"
+                            "Gravewarden has appeared.\n\n"
+                            + self.current_area.get_details()
+                        )
+                    )
+
+                    return
+
                 healed = (
                     self.player_inventory.heal_player(
                         game_logic.player
@@ -817,7 +917,7 @@ class Game:
 
                     self.menu_label.config(
                         text=(
-                            "The magical barrier disappears.\n\n"
+                            "The barrier that was hidding it disappears.\n\n"
                             + self.current_area.get_details()
                         )
                     )
@@ -1002,7 +1102,10 @@ class Game:
             text=destination.get_details()
         )
 
-    def _display_dialogue_node(self, node):
+    def _display_dialogue_node(
+        self,
+        node
+    ):
 
         if not node:
 
@@ -1053,8 +1156,6 @@ class Game:
             )
         )
 
-        # If the choice is wrong, show the options again.
-        # this part was pretty hard to code lowkey
         if next_node is None:
 
             current_node = (
