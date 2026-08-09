@@ -118,7 +118,7 @@ class Area:
     # Pick a random thought during travel.
     def get_travel_monologue(self):
         monologues = [
-        " I wonder...  "
+            " I wonder...  "
         ]
 
         return random.choice(monologues)
@@ -547,7 +547,8 @@ soldat = Ally(
 )
 
 
-# Surface enemies.
+
+# (these two will be used for the sequel).
 
 bandit = Enemy(
     name="Gilded Gold Underling",
@@ -563,6 +564,8 @@ orsted = Enemy(
     is_boss=True
 )
 
+# Surface enemies 
+
 soldat_mad = Enemy(
     name="Soldat Vanderbilt",
     health=60,
@@ -575,50 +578,78 @@ soldat_mad = Enemy(
 
 orb = Enemy(
     name="Orb",
-    health=20,
-    attack_power=5,
+    health=25,
+    attack_power=6,
     is_boss=False
 )
 
 noid = Enemy(
     name="Noid",
-    health=40,
-    attack_power=12,
+    health=45,
+    attack_power=10,
     is_boss=False
 )
 
 drakonid = Enemy(
     name="drakonid",
-    health=60,
-    attack_power=20,
+    health=70,
+    attack_power=16,
     is_boss=False
 )
 
 lesser_dragon = Enemy(
     name="Lesser Dragon",
-    health=100,
+    health=150,
     attack_power=25,
     is_boss=True
 )
 
 warden = Enemy(
     name="Deeproot Warden",
-    health=5,
-    attack_power=25,
+    health=110,
+    attack_power=20,
     is_boss=False
 )
 
 shadow = Enemy(
     name="Shadowroot Spirits",
-    health=5,
-    attack_power=30,
+    health=130,
+    attack_power=24,
     is_boss=False
 )
 
 draconic = Enemy(
     name="Draconic Gloomtree Sentinel",
-    health=5,
+    health=300,
     attack_power=45,
+    is_boss=True
+)
+
+chaos_orb = Enemy(
+    name="Chaos Orb",
+    health=220,
+    attack_power=35,
+    is_boss=False
+)
+
+sky_gargoyle = Enemy(
+    name="Sky Gargoyle",
+    health=300,
+    attack_power=45,
+    is_boss=False
+)
+
+agheel = Enemy(
+    name="Great Dragon Agheel the Watchkeeper",
+    health=650,
+    attack_power=60,
+    is_boss=True
+)
+
+lucidusax = Enemy(
+    name="Ancient True Dragon Lucidusax",
+    health=1200,
+    attack_power=80,
     is_boss=True
 )
 
@@ -627,7 +658,7 @@ draconic = Enemy(
 
 dagger = Weapon(
     name="Dagger",
-    bonus_damage=5,
+    bonus_damage=1000,
     rarity="Common",
     description="This small blade can be bought in any shop."
 )
@@ -726,7 +757,7 @@ thorn = Weapon(
 
 gravewarden = Weapon(
     name="Gravewarden",
-    bonus_damage=50,
+    bonus_damage=30,
     rarity="Legacy",
     description=(
         "Left to decay in the vast fields outside of Ashenhollow, "
@@ -737,7 +768,7 @@ gravewarden = Weapon(
 
 silencedagger = Weapon(
     name="Parthanlán's Silence",
-    bonus_damage=50,
+    bonus_damage=35,
     rarity="Legacy",
     description=(
         "Belonged to the founder of the hideout. It was designed "
@@ -782,11 +813,9 @@ greatrune = Relic(
     bonus_damage=0,
     rarity="Relic",
     description=(
-        "This item is dropped by all the dungeon bosses in the game, "
+        "This item is dropped by the first two bosses in the game, "
         "this item generates an uneasy aura while holding it, so best "
-        "not hold onto it for too long. These Runes vastly increase "
-        "the player's health, but at the cost of increasing Orsted's "
-        "appearance."
+        "not hold onto it for too long."
     ),
     is_relic=True
 )
@@ -798,6 +827,10 @@ parthalanhideout = SecretArea(
     name="Parthanlán's hideout",
     description="This sercet area is very sercet",
     passcode="Password"
+)
+
+parthalanhideout.add_item(
+    silencedagger
 )
 
 
@@ -864,14 +897,12 @@ skylift = Area(
     description=(
         "This lift is the grand entrance to the lands high up "
         "upon the clouds. You feel a sense of familiarity however "
-        "you can't quite understand where it's coming from? This "
-        "is opened once all dungeons are cleared and you have at "
-        "least 2 of Orsted Great Runes."
+        "you can't quite understand where it's coming from?"
     ),
     zone_type="Standard"
 )
 
-skytemple = Area(
+skytemple = Dungeon(
     name="Sky Temple",
     description=(
         "Once leaving the earthly plain of existence, the lift "
@@ -880,7 +911,12 @@ skytemple = Area(
         "continue forward to the highest point, travelling by "
         "ruins that you can interact with."
     ),
-    zone_type="Standard"
+    danger_level=4,
+    enemies=[
+        chaos_orb,
+        sky_gargoyle,
+        agheel,
+    ]
 )
 
 blindboartavern = Area(
@@ -929,7 +965,7 @@ gloomwood = Dungeon(
     ]
 )
 
-ventusazura = Area(
+ventusazura = Dungeon(
     name="Ventus Azura",
     description=(
         "At the absolute apex of the clouds sits Ventus Azura, "
@@ -937,11 +973,15 @@ ventusazura = Area(
         "and signs, but an active home to the most horrifying "
         "beings that are allowed on this plain of existence: "
         "True Dragons. They are the only beings capable of "
-        "mastering and using wild magic at will. They are fierce "
-        "and massive, not bound by time or space. They stand at "
-        "sizes that only can be perceived fully from another "
-        "stratum."
-    )
+        "mastering and using wild magic at will. These dragons "
+        "are fierce and massive, not bound by time or space. "
+        "They stand at sizes that can only be perceived fully "
+        "from another stratum."
+    ),
+    danger_level=5,
+    enemies=[
+        lucidusax
+    ]
 )
 
 
@@ -1056,6 +1096,10 @@ blindboartavern.add_item(
 
 ashenhollow.add_item(
     twinlight
+)
+
+gloomwood.add_item(
+    thorn
 )
 
 
