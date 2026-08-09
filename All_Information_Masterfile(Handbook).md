@@ -79,7 +79,7 @@ This is the final boss of the first dungeon, this enemy is only accessible throu
 # Dungeon 2 Enemies & Boss
 
 ### Orb
-Found in any levels of a dungeon. This orb is a pure black ball, compressed of high levels of wild magic, nearly uncontrollable by a mere human. Orb is the most common enemy you will encounter within a dungeon. Although the weakest by far of all the enemies, Orb is an unruly and unpredictable enemy, he may become stronger with the right conditions.
+Found in any levels of a dungeon. This orb is a pure black ball, compressed of high levels of wild magic, nearly uncontrollable by a mere human. Orb is the most common enemy you will encounter within a dungeon. Although the weakest by far of all the enemies, Orb is an unruly and unpredictable enemy, he may become something called the Chaos Orb that is stronger with the right conditions.
 
 ### Deeproot Warden
 A wandering titan of a man, he navigates the forest shallows without the burden of roots. Overgrown vines wrap tightly around his armour, a legendary warden rumoured to be forged from the ancient, unyielding woof of the First Generation of Gloomwood trees. He can't die truly, becuase his soul was consumed by the forest. You can talk to him after you have defeated him, as he will become a friendly npc. 
@@ -92,9 +92,14 @@ The horrors of what a great dragon can become, rotted by the gloomwood forest, i
 
 # Dungeon 3 Enemies & Boss
 
-### Sky Gargoyle 
+### Chaos Orb
+A volatile sphere born from the fusion of draconic power and unstable magic. No living creature truly controls the energy within it. The orb thrashes with an unnatural force, constantly threatening to rupture and unleash whatever power was forced into its core.
 
-###
+### Sky Gargoyle 
+A grotesque construct forged from weathered stone, corpse-wax, and the severed wings of fallen dragons. Built to watch the skies, it has long since lost whatever purpose its creators intended for it. Its stone body may be ancient, but the draconic remains bound to it still twitch with unnatural life.
+
+### Great Dragon Agheel the Watchkeeper
+He sits at the base of the lowest stratum or guards the final gateway leading up to Ventus Azura. Mortals only see Agheel as a massive great dragon, unaware that his true, space-bending form extends far beyond the clouds. He is one of the few great dragons that were named, as only true dragons are given the permission to be named.
 
 
 ---
