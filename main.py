@@ -249,10 +249,14 @@ class Game:
             self.menu_label.config(
                 text=(
                     "Credits\n\n"
-                    "Created by Tynan Kocet. ;)\n\n"
+                    "SkyBorne.\n\n"
+                    "Created by Tynan Kocet.\n\n"
+                    "© 2026 Tynan Kocet\n"
                     "Type 0 to go back."
                 )
             )
+
+
 
         elif choice == "3":
 
