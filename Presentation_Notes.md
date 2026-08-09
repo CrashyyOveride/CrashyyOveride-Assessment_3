@@ -4,7 +4,7 @@
 Why did you choose an Object-Oriented Programming (OOP) approach over a standard procedural approach for a text RPG?
 
 ### Answer 1
-OOP allows me to map game entities directly to real-world objects through code abstraction. Instead of using massive, messy nested loops to track character stats, I can create a single parent class called Actor with shared attributes like HP and Stamina. From there, the Player and Enemy classes inherit that baseline code structure cleanly. It makes the entire game modular, much easier to scale, and allows me to create original characters effortlessly by modifying attributes.
+OOP allows me to map game entities directly to real-world objects through code abstraction. Instead of using massive, messy nested loops to track character stats, I can create a single parent class called Actor with shared attributes like HP. From there, the Player and Enemy classes inherit that baseline code structure cleanly. It makes the entire game modular, much easier to scale, and allows me to create original characters effortlessly by modifying attributes.
 
 ### Question 2
 How did you manage player movement and location connections without using a standard grid coordinate (X, Y) map system?
@@ -18,8 +18,3 @@ What challenges did you face when migrating your game from a standard IDE termin
 ### Answer 3
 The biggest hurdle was managing synchronous text display. In a standard console, code executes line-by-line using time.sleep() blocks to pace reading speeds. In a Tkinter window application, time.sleep() freezes the main thread event loop, causing the whole interface window to crash or stop responding. To solve this, I decoupled the narrative generation step from the display layer, using Tkinter's internal .after() scheduling system to animate textual outputs cleanly without locking up the UI thread.
 
-### Question 4
-Explain the mechanical trade-off design behind Orsted's Great Rune.
-
-### Answer 4
-The design uses state-flag tracking to implement a classic risk-versus-reward mechanic. When the user loots the item from the Lesser Dragon, a global Boolean flag (has_rune = True) modifies the runtime game state engine. It scales the player's maximum health attribute by fifty percent, but simultaneously acts as an active multiplier within the random generation script that controls overworld ambushes vastly increasing the hazard rate of encountering the un-attackable stalker boss, Orsted Drake.
