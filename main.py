@@ -1,259 +1,1107 @@
 import tkinter as tk
-import random
 import game_logic
 import combat
+from items import Inventory
 from tkinter import font as tkfont
 
+
 class Game:
+
     def __init__(self, root):
+
         self.root = root
         self.root.title("Game")
         self.root.configure(bg="black")
         self.root.attributes("-fullscreen", True)
-        self.root.bind("<Escape>", lambda event: self.root.destroy())
-        
+
+        # Escape closes the game.
+        self.root.bind(
+            "<Escape>",
+            lambda event: self.root.destroy()
+        )
+
         self.game_state = "menu"
+
         self.current_area = game_logic.landing_zone
         self.last_safe_area = game_logic.landing_zone
 
-        self.dungeon_progress = 0 
-
+        self.dungeon_progress = 0
         self.combat_context = None
 
+        self.player_inventory = Inventory(
+            max_slots=20
+        )
+
+        # Keep the player and inventory linked.
+        game_logic.player.inventory = (
+            self.player_inventory
+        )
+
+        self.current_npc = None
         self.index_frame = None
         self.index_text = None
-        
+
         self.default_menu = (
-            "Test Game\n\n\n"
-            "1. Start Game\n"
-            "2. Credits\n"
-            "3. Developer Note\n"
-            "4. Index\n\n"
-            "Enter Choice Below:"
+            "                                           \n"
+            "  ███████╗ ██╗  ██╗ ██╗   ██╗ ██████╗  ██████╗ ██████╗ ███╗   ██╗███████╗\n"
+            "  ██╔════╝ ██║ ██╔╝ ╚██╗ ██╔╝ ██╔══██╗██╔═══██╗██╔══██╗████╗  ██║██╔════╝\n"
+            "  ███████╗ █████╔╝   ╚████╔╝  ██████╔╝██║   ██║██████╔╝██╔██╗ ██║█████╗  \n"
+            "  ╚════██║ ██╔██╗     ╚██╔╝   ██╔══██╗██║   ██║██╔══██╗██║╚██╗██║██╔══╝  \n"
+            "  ███████║ ██║╚██╗     ██║    ██████╔╝╚██████╔╝██║  ██║██║ ╚████║███████╗\n"
+            "  ╚══════╝ ╚═╝ ╚═╝     ╚═╝    ╚═════╝  ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝\n"
+            "                                           \n"
+            "  [1]  START GAME                          \n"
+            "  [2]  CREDITS                             \n"
+            "  [3]  DEVELOPER NOTE                      \n"
+            "  [4]  INDEX                               \n"
+            "                                           \n"
         )
-        
+
         self.menu_label = tk.Label(
-            self.root, 
-            text=self.default_menu, 
-            font=("American Typewriter", 24), 
-            fg="white", 
-            bg="black", 
+            self.root,
+            text=self.default_menu,
+            font=("Courier New", 18),
+            fg="#E8E3D8",
+            bg="#0B0B0B",
             justify="center",
-            wraplength=1200
+            anchor="center"
         )
-        self.menu_label.pack(expand=True, fill="both")
-        
-        input_frame = tk.Frame(self.root, bg="black")
-        input_frame.pack(pady=(0, 100))
+
+        self.menu_label.pack(
+            expand=True,
+            fill="both",
+            padx=40,
+            pady=(40, 20)
+        )
+
+        input_frame = tk.Frame(
+            self.root,
+            bg="black"
+        )
+
+        input_frame.pack(
+            pady=(0, 70)
+        )
+
         self.input_frame = input_frame
-        
-        prompt_label = tk.Label(input_frame, text="> ", font=("American Typewriter", 24), fg="white", bg="black")
-        prompt_label.pack(side="left")
-        
-        self.root.bind('<Return>', self.route_input)
-        
-        self.user_input = tk.Entry(
-            input_frame, 
-            font=("American Typewriter", 24), 
-            fg="white", 
-            bg="#222222", 
-            width=15, 
-            insertbackground="white", 
-            bd=0, 
-            highlightthickness=0
+
+        prompt_label = tk.Label(
+            input_frame,
+            text="> ",
+            font=("American Typewriter", 18),
+            fg="#AAAAAA",
+            bg="black"
         )
-        self.user_input.pack(side="left")
+
+        prompt_label.pack(
+            side="left"
+        )
+
+        self.user_input = tk.Entry(
+            input_frame,
+            font=("American Typewriter", 18),
+            fg="white",
+            bg="#1A1A1A",
+            width=18,
+            insertbackground="white",
+            bd=0,
+            highlightthickness=1,
+            highlightbackground="#333333",
+            highlightcolor="#666666"
+        )
+
+        self.user_input.pack(
+            side="left"
+        )
+
         self.user_input.focus_set()
 
-    def route_input(self, event):
+        self.root.bind(
+            "<Return>",
+            self.route_input
+        )
+
+    def route_input(self, event=None):
+
         raw_text = self.user_input.get().strip()
-        self.user_input.delete(0, tk.END)
-        
+
+        self.user_input.delete(
+            0,
+            tk.END
+        )
+
+        # Stops empty commands from causing errors.
+        if not raw_text:
+
+            if self.game_state == "gameplay":
+
+                self.menu_label.config(
+                    text=(
+                        "Please enter a command.\n\n"
+                        + self.current_area.get_details()
+                    )
+                )
+
+            elif self.game_state == "combat":
+
+                self.menu_label.config(
+                    text=(
+                        "Please choose: "
+                        "attack / defend / flee"
+                    )
+                )
+
+            elif self.game_state == "dialogue":
+
+                self.menu_label.config(
+                    text=(
+                        "Please choose one of "
+                        "the dialogue options."
+                    )
+                )
+
+            else:
+
+                self.menu_label.config(
+                    text=self.default_menu
+                )
+
+            return
+
+        # Sends input to the right part of the game.
         if self.game_state == "menu":
-            self.handle_menu_choice(raw_text)
+
+            self.handle_menu_choice(
+                raw_text
+            )
+
         elif self.game_state == "gameplay":
-            self.handle_gameplay_command(raw_text)
+
+            self.handle_gameplay_command(
+                raw_text
+            )
+
+        elif self.game_state == "dialogue":
+
+            self.handle_dialogue_choice(
+                raw_text
+            )
+
         elif self.game_state == "combat":
-            combat.handle_combat_input(self, raw_text)
-        else:
-            self.game_state = "gameplay"
-            self.menu_label.config(text=self.current_area.get_details())
+
+            combat.handle_combat_input(
+                self,
+                raw_text
+            )
 
     def handle_menu_choice(self, choice):
+
+        choice = choice.strip()
+
         if choice == "1":
+
             self.game_state = "gameplay"
+
             self._hide_index_if_shown()
-            self.menu_label.config(text=self.current_area.get_details())
+
+            self.menu_label.config(
+                text=self.current_area.get_details()
+            )
+
         elif choice == "2":
+
             self._hide_index_if_shown()
-            self.menu_label.config(text="Credits\n\nType 0 to go back.")
+
+            self.menu_label.config(
+                text=(
+                    "Credits\n\n"
+                    "Created by Matej.\n\n"
+                    "Type 0 to go back."
+                )
+            )
+
         elif choice == "3":
+
             self._hide_index_if_shown()
-            self.menu_label.config(text="Developer Note\n\nI worked on this game and \n I'm pretty proud of it :)\n\nType 0 to go back.")
+
+            self.menu_label.config(
+                text=(
+                    "Developer Note\n\n"
+                    "I worked on this game and\n"
+                    "I'm pretty proud of it :)\n\n"
+                    "Type 0 to go back."
+                )
+            )
+
         elif choice == "4":
+
             self.game_state = "menu"
             self.show_index()
+
         elif choice == "0":
+
             self._hide_index_if_shown()
+
             self.game_state = "menu"
-            self.menu_label.config(text=self.default_menu)
+
+            self.menu_label.config(
+                text=self.default_menu
+            )
+
         else:
+
             self._hide_index_if_shown()
-            self.menu_label.config(text=f"INVALID CHOICE: '{choice}'\n\nPlease select 1, 2, 3, or 4.")
+
+            self.menu_label.config(
+                text=(
+                    f"INVALID CHOICE: '{choice}'\n\n"
+                    "Please select 1, 2, 3, or 4."
+                )
+            )
 
     def _hide_index_if_shown(self):
+
         if self.index_frame:
+
             self.index_frame.pack_forget()
             self.index_frame.destroy()
+
             self.index_frame = None
             self.index_text = None
 
         if not self.menu_label.winfo_ismapped():
-            try:
-                if getattr(self, "input_frame", None) and self.input_frame.winfo_exists():
-                    self.menu_label.pack(expand=True, fill="both", before=self.input_frame)
-                else:
-                    self.menu_label.pack(expand=True, fill="both")
-            except Exception:
-                self.menu_label.pack(expand=True, fill="both")
+
+            self.menu_label.pack(
+                expand=True,
+                fill="both",
+                padx=100,
+                pady=(40, 20),
+                before=self.input_frame
+            )
 
     def show_index(self):
+
         if self.menu_label.winfo_ismapped():
+
             self.menu_label.pack_forget()
 
-        self.index_frame = tk.Frame(self.root, bg="black")
-        self.index_frame.pack(expand=True, fill="both", padx=40, pady=20)
+        self.index_frame = tk.Frame(
+            self.root,
+            bg="black"
+        )
 
-        scrollbar = tk.Scrollbar(self.index_frame)
-        scrollbar.pack(side="right", fill="y")
+        self.index_frame.pack(
+            expand=True,
+            fill="both",
+            padx=100,
+            pady=30
+        )
 
-        text_font = tkfont.Font(family="American Typewriter", size=16)
+        scrollbar = tk.Scrollbar(
+            self.index_frame,
+            bg="#222222",
+            troughcolor="black"
+        )
+
+        scrollbar.pack(
+            side="right",
+            fill="y"
+        )
+
+        text_font = tkfont.Font(
+            family="American Typewriter",
+            size=14
+        )
+
         self.index_text = tk.Text(
             self.index_frame,
             font=text_font,
-            fg="white",
+            fg="#E8E8E8",
             bg="black",
             wrap="word",
             yscrollcommand=scrollbar.set,
             bd=0,
             highlightthickness=0,
-            padx=10,
-            pady=10
+            padx=20,
+            pady=20,
+            spacing1=3,
+            spacing2=2,
+            spacing3=6
         )
-        self.index_text.pack(expand=True, fill="both", side="left")
-        scrollbar.config(command=self.index_text.yview)
 
-        self.index_text.tag_config("header", foreground="#FFFFFF", font=(None, 18, "bold"))
-        self.index_text.tag_config("weapon", foreground="#4FA3FF")   # blue
-        self.index_text.tag_config("character", foreground="#7CFF8A")# green
-        self.index_text.tag_config("enemy", foreground="#FF6B6B")    # red
-        self.index_text.tag_config("location", foreground="#FFD66B") # yellow/gold
-        self.index_text.tag_config("muted", foreground="#AAAAAA")
-        self.index_text.tag_config("section", foreground="#FFFFFF", font=(None, 17, "bold"))
+        self.index_text.pack(
+            expand=True,
+            fill="both",
+            side="left"
+        )
+
+        scrollbar.config(
+            command=self.index_text.yview
+        )
+
+        self.index_text.tag_config(
+            "header",
+            foreground="#FFFFFF",
+            font=("American Typewriter", 17, "bold")
+        )
+
+        self.index_text.tag_config(
+            "weapon",
+            foreground="#6FAFFF"
+        )
+
+        self.index_text.tag_config(
+            "character",
+            foreground="#7CFF8A"
+        )
+
+        self.index_text.tag_config(
+            "enemy",
+            foreground="#FF7777"
+        )
+
+        self.index_text.tag_config(
+            "location",
+            foreground="#FFD66B"
+        )
+
+        self.index_text.tag_config(
+            "muted",
+            foreground="#888888"
+        )
+
+        self.index_text.tag_config(
+            "section",
+            foreground="#FFFFFF",
+            font=("American Typewriter", 15, "bold")
+        )
 
         weapons = []
         characters = []
         enemies = []
         locations = []
 
+        # Find all the objects for the index.
         for name, obj in vars(game_logic).items():
+
             if name.startswith("_"):
                 continue
-            try:
-                if isinstance(obj, game_logic.Weapon):
-                    weapons.append(obj)
-                    continue
-            except Exception:
-                pass
-            try:
-                if isinstance(obj, game_logic.Enemy):
-                    enemies.append(obj)
-                    continue
-            except Exception:
-                pass
-            try:
-                if isinstance(obj, game_logic.Ally):
-                    characters.append(obj)
-                    continue
-            except Exception:
-                pass
-            try:
-                if isinstance(obj, game_logic.Area):
-                    locations.append(obj)
-                    continue
-            except Exception:
-                pass
 
-        weapons.sort(key=lambda w: getattr(w, "name", "").lower())
-        characters.sort(key=lambda c: getattr(c, "name", "").lower())
-        enemies.sort(key=lambda e: getattr(e, "name", "").lower())
-        locations.sort(key=lambda l: getattr(l, "name", "").lower())
+            if isinstance(
+                obj,
+                game_logic.Weapon
+            ):
 
-        self.index_text.insert("end", "INDEX\n", "header")
-        self.index_text.insert("end", "\nWeapons\n", "section")
+                weapons.append(obj)
+
+            elif isinstance(
+                obj,
+                game_logic.Enemy
+            ):
+
+                enemies.append(obj)
+
+            elif isinstance(
+                obj,
+                game_logic.Ally
+            ):
+
+                characters.append(obj)
+
+            elif isinstance(
+                obj,
+                game_logic.Area
+            ):
+
+                locations.append(obj)
+
+        weapons.sort(
+            key=lambda w: w.name.lower()
+        )
+
+        characters.sort(
+            key=lambda c: c.name.lower()
+        )
+
+        enemies.sort(
+            key=lambda e: e.name.lower()
+        )
+
+        locations.sort(
+            key=lambda l: l.name.lower()
+        )
+
+        self.index_text.insert(
+            "end",
+            "INDEX\n",
+            "header"
+        )
+
+        self.index_text.insert(
+            "end",
+            "\nWeapons\n",
+            "section"
+        )
+
         if weapons:
-            for w in weapons:
-                line = f"-- {w.name} (Damage: {w.bonus_damage}, Rarity: {w.rarity})\n"
-                self.index_text.insert("end", line, "weapon")
-        else:
-            self.index_text.insert("end", "  (none)\n\n", "muted")
 
-        self.index_text.insert("end", "\nCharacters / Allies\n", "section")
+            for weapon in weapons:
+
+                line = (
+                    f"-- {weapon.name} "
+                    f"(Damage: {weapon.bonus_damage}, "
+                    f"Rarity: {weapon.rarity})\n"
+                )
+
+                self.index_text.insert(
+                    "end",
+                    line,
+                    "weapon"
+                )
+
+        else:
+
+            self.index_text.insert(
+                "end",
+                "  (none)\n",
+                "muted"
+            )
+
+        self.index_text.insert(
+            "end",
+            "\nCharacters / Allies\n",
+            "section"
+        )
+
         if characters:
-            for c in characters:
-                line = f"-- {c.name} (HP: {c.current_health}/{c.max_health}, ATK: {c.base_attack}\n"
-                self.index_text.insert("end", line, "character")
-        else:
-            self.index_text.insert("end", "  (none)\n\n", "muted")
 
-        self.index_text.insert("end", "\nEnemies\n", "section")
+            for character in characters:
+
+                line = (
+                    f"-- {character.name} "
+                    f"(HP: {character.current_health}/"
+                    f"{character.max_health}, "
+                    f"ATK: {character.base_attack})\n"
+                )
+
+                self.index_text.insert(
+                    "end",
+                    line,
+                    "character"
+                )
+
+        else:
+
+            self.index_text.insert(
+                "end",
+                "  (none)\n",
+                "muted"
+            )
+
+        self.index_text.insert(
+            "end",
+            "\nEnemies\n",
+            "section"
+        )
+
         if enemies:
-            for e in enemies:
-                line = f"-- {e.name} (HP: {e.current_health}/{e.max_health}, ATK: {e.base_attack}, Boss: {e.is_boss})\n"
-                self.index_text.insert("end", line, "enemy")
-        else:
-            self.index_text.insert("end", "  (none)\n\n", "muted")
 
-        self.index_text.insert("end", "\nLocations\n", "section")
+            for enemy in enemies:
+
+                line = (
+                    f"-- {enemy.name} "
+                    f"(HP: {enemy.current_health}/"
+                    f"{enemy.max_health}, "
+                    f"ATK: {enemy.base_attack}, "
+                    f"Boss: {enemy.is_boss})\n"
+                )
+
+                self.index_text.insert(
+                    "end",
+                    line,
+                    "enemy"
+                )
+
+        else:
+
+            self.index_text.insert(
+                "end",
+                "  (none)\n",
+                "muted"
+            )
+
+        self.index_text.insert(
+            "end",
+            "\nLocations\n",
+            "section"
+        )
+
         if locations:
-            for loc in locations:
-                exits = ", ".join(k.upper() for k in getattr(loc, "exits", {}).keys()) or "NONE"
-                line = f"-- {loc.name} (Type: {loc.zone_type})\n"
-                self.index_text.insert("end", line, "location")
+
+            for location in locations:
+
+                line = (
+                    f"-- {location.name} "
+                    f"(Type: {location.zone_type})\n"
+                )
+
+                self.index_text.insert(
+                    "end",
+                    line,
+                    "location"
+                )
+
         else:
-            self.index_text.insert("end", "  (none)\n\n", "muted")
 
-        self.index_text.insert("end", "\nType 0 and press Enter to return to the main menu.", "muted")
+            self.index_text.insert(
+                "end",
+                "  (none)\n",
+                "muted"
+            )
 
-        self.index_text.config(state="disabled")
+        self.index_text.insert(
+            "end",
+            "\nType 0 and press Enter "
+            "to return to the main menu.",
+            "muted"
+        )
 
-    def handle_gameplay_command(self, command):
-        clean_command = command.lower().strip()
-        output_buffer = ""
-        
+        self.index_text.config(
+            state="disabled"
+        )
+
+    def handle_gameplay_command(
+        self,
+        command
+    ):
+
+        clean_command = (
+            command.lower().strip()
+        )
+
+        if not clean_command:
+
+            self.menu_label.config(
+                text=(
+                    "Please enter a command.\n\n"
+                    + self.current_area.get_details()
+                )
+            )
+
+            return
+
         if clean_command.startswith("go "):
-            direction = clean_command.replace("go ", "").strip()
+
+            direction = (
+                clean_command[3:].strip()
+            )
+
             if direction in self.current_area.exits:
-                self.current_area = self.current_area.exits[direction]
-                output_buffer += f"You travel {direction}. \n\n"
 
-                if getattr(self.current_area, "is_safe", False):
-                    self.last_safe_area = self.current_area
+                destination = (
+                    self.current_area.exits[
+                        direction
+                    ]
+                )
 
-                if isinstance(self.current_area, game_logic.Dungeon):
-                    combat.start_encounter(self, self.current_area)
-                    return
-                else:
-                    self.menu_label.config(text=output_buffer + self.current_area.get_details())
+                self.start_travel(
+                    direction,
+                    destination
+                )
+
             else:
-                self.menu_label.config(text=f'Blocked! There is no exit to the "{direction}".')
+
+                self.menu_label.config(
+                    text=(
+                        f'Blocked! There is no exit to '
+                        f'the "{direction}".\n\n'
+                        + self.current_area.get_details()
+                    )
+                )
+
+        elif clean_command == "inventory":
+
+            self.menu_label.config(
+                text=(
+                    self.player_inventory.list_items()
+                    + "\n\n"
+                    + self.current_area.get_details()
+                )
+            )
+
+        elif clean_command == "pray":
+
+            if getattr(
+                self.current_area,
+                "is_safe",
+                False
+            ):
+
+                healed = (
+                    self.player_inventory.heal_player(
+                        game_logic.player
+                    )
+                )
+
+                if healed:
+
+                    self.menu_label.config(
+                        text=(
+                            "You kneel and pray.\n\n"
+                            "A peaceful warmth flows through you.\n"
+                            f"You are restored to "
+                            f"{game_logic.player.current_health}/"
+                            f"{game_logic.player.max_health} HP.\n\n"
+                            + self.current_area.get_details()
+                        )
+                    )
+
+                else:
+
+                    self.menu_label.config(
+                        text=(
+                            "You kneel and pray.\n\n"
+                            "You are already at full health.\n\n"
+                            + self.current_area.get_details()
+                        )
+                    )
+
+            else:
+
+                self.menu_label.config(
+                    text=(
+                        "You cannot pray safely here.\n\n"
+                        "The area is too dangerous.\n\n"
+                        + self.current_area.get_details()
+                    )
+                )
+
+        elif clean_command.startswith("talk "):
+
+            npc_name = (
+                clean_command[5:].strip()
+            )
+
+            npc = (
+                self.current_area.get_npc_by_name(
+                    npc_name
+                )
+            )
+
+            if npc:
+
+                self.game_state = "dialogue"
+                self.current_npc = npc
+
+                node = (
+                    npc.start_conversation()
+                )
+
+                self._display_dialogue_node(
+                    node
+                )
+
+            else:
+
+                self.menu_label.config(
+                    text=(
+                        f"There's no one called "
+                        f"'{npc_name}' here.\n\n"
+                        + self.current_area.get_details()
+                    )
+                )
+
+        elif clean_command.startswith("take "):
+
+            weapon_name = (
+                clean_command[5:].strip()
+            )
+
+            weapon = (
+                self.current_area.get_item_by_name(
+                    weapon_name
+                )
+            )
+
+            if weapon:
+
+                if self.player_inventory.add_item(
+                    weapon
+                ):
+
+                    self.current_area.items.remove(
+                        weapon
+                    )
+
+                    self.menu_label.config(
+                        text=(
+                            f"You picked up "
+                            f"{weapon.name}!\n"
+                            f"(+{weapon.bonus_damage} damage)\n\n"
+                            + self.current_area.get_details()
+                        )
+                    )
+
+                else:
+
+                    self.menu_label.config(
+                        text=(
+                            "Your inventory is full!\n\n"
+                            + self.current_area.get_details()
+                        )
+                    )
+
+            else:
+
+                self.menu_label.config(
+                    text=(
+                        f"There's no "
+                        f"'{weapon_name}' here.\n\n"
+                        + self.current_area.get_details()
+                    )
+                )
+
+        elif clean_command.startswith("equip "):
+
+            weapon_name = (
+                clean_command[6:].strip()
+            )
+
+            weapon = (
+                self.player_inventory.get_item_by_name(
+                    weapon_name
+                )
+            )
+
+            if weapon:
+
+                if self.player_inventory.equip_weapon(
+                    weapon,
+                    game_logic.player
+                ):
+
+                    self.menu_label.config(
+                        text=(
+                            f"You equipped "
+                            f"{weapon.name}!\n"
+                            f"(+{weapon.bonus_damage} damage)\n\n"
+                            + self.current_area.get_details()
+                        )
+                    )
+
+            else:
+
+                self.menu_label.config(
+                    text=(
+                        f"You don't have "
+                        f"'{weapon_name}' "
+                        "in your inventory.\n\n"
+                        + self.current_area.get_details()
+                    )
+                )
+
+        elif clean_command.startswith("unlock "):
+
+            if isinstance(
+                self.current_area,
+                game_logic.SecretArea
+            ):
+
+                passcode = (
+                    clean_command[7:].strip()
+                )
+
+                if self.current_area.unlock(
+                    passcode
+                ):
+
+                    self.menu_label.config(
+                        text=(
+                            "The magical barrier disappears.\n\n"
+                            + self.current_area.get_details()
+                        )
+                    )
+
+                else:
+
+                    self.menu_label.config(
+                        text=(
+                            "Incorrect passcode.\n\n"
+                            + self.current_area.get_details()
+                        )
+                    )
+
+            else:
+
+                self.menu_label.config(
+                    text=(
+                        "There is nothing here to unlock.\n\n"
+                        + self.current_area.get_details()
+                    )
+                )
+
         elif clean_command == "menu":
+
             self.game_state = "menu"
-            self.menu_label.config(text=self.default_menu)
+
+            self.menu_label.config(
+                text=self.default_menu
+            )
+
         else:
-            self.menu_label.config(text=f"Unknown command: '{command}'\nTry 'go north' or 'menu'\n\n" + self.current_area.get_details())
-         
+
+            self.menu_label.config(
+                text=(
+                    f"Unknown command: '{command}'\n\n"
+                    + self.current_area.get_details()
+                )
+            )
+
+    def start_travel(
+        self,
+        direction,
+        destination
+    ):
+
+        self.game_state = "traveling"
+
+        origin = self.current_area
+
+        self.menu_label.config(
+            text=(
+                "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                f"TRAVELING: {origin.name.upper()} "
+                f"→ {destination.name.upper()}\n"
+                "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n"
+                "Traveling."
+            )
+        )
+
+        self._travel_step(
+            origin,
+            destination,
+            direction,
+            0
+        )
+
+    def _travel_step(
+        self,
+        origin,
+        destination,
+        direction,
+        step
+    ):
+
+        if self.game_state != "traveling":
+            return
+
+        symbols = [
+            ".",
+            "..",
+            "..."
+        ]
+
+        if step < len(symbols):
+
+            self.menu_label.config(
+                text=(
+                    "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                    f"TRAVELING: {origin.name.upper()} "
+                    f"→ {destination.name.upper()}\n"
+                    "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n"
+                    f"Traveling{symbols[step]}"
+                )
+            )
+
+            self.root.after(
+                350,
+                lambda: self._travel_step(
+                    origin,
+                    destination,
+                    direction,
+                    step + 1
+                )
+            )
+
+            return
+
+        self.current_area = destination
+
+        if getattr(
+            self.current_area,
+            "is_safe",
+            False
+        ):
+
+            self.last_safe_area = (
+                self.current_area
+            )
+
+        monologue = (
+            origin.get_travel_monologue()
+        )
+
+        self.menu_label.config(
+            text=(
+                "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                f"TRAVELING: {origin.name.upper()} "
+                f"→ {destination.name.upper()}\n"
+                "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n"
+                f'"{monologue}"\n\n'
+                f"You arrive at "
+                f"{destination.name.upper()}."
+            )
+        )
+
+        self.root.after(
+            700,
+            lambda: self.finish_travel(
+                destination
+            )
+        )
+
+    def finish_travel(
+        self,
+        destination
+    ):
+
+        if self.game_state != "traveling":
+            return
+
+        if isinstance(
+            destination,
+            game_logic.Dungeon
+        ):
+
+            if destination.is_cleared():
+
+                self.game_state = "gameplay"
+
+                self.menu_label.config(
+                    text=(
+                        "You return to the "
+                        "completed dungeon.\n\n"
+                        + destination.get_details()
+                    )
+                )
+
+            else:
+
+                self.game_state = "combat"
+
+                combat.start_encounter(
+                    self,
+                    destination
+                )
+
+            return
+
+        self.game_state = "gameplay"
+
+        self.menu_label.config(
+            text=destination.get_details()
+        )
+
+    def _display_dialogue_node(self, node):
+
+        if not node:
+
+            self.game_state = "gameplay"
+            self.current_npc = None
+
+            self.menu_label.config(
+                text=self.current_area.get_details()
+            )
+
+            return
+
+        options_text = ""
+
+        for key, (text, _) in node.options.items():
+
+            options_text += (
+                f"{key}. {text}\n"
+            )
+
+        display = (
+            f"{node.text}\n\n"
+            f"{options_text}"
+        )
+
+        self.menu_label.config(
+            text=display
+        )
+
+    def handle_dialogue_choice(
+        self,
+        choice
+    ):
+
+        if not self.current_npc:
+
+            self.game_state = "gameplay"
+
+            self.menu_label.config(
+                text=self.current_area.get_details()
+            )
+
+            return
+
+        next_node = (
+            self.current_npc.say(
+                choice
+            )
+        )
+
+        # If the choice is wrong, show the options again.
+        # this part was pretty hard to code lowkey
+        if next_node is None:
+
+            current_node = (
+                self.current_npc.dialogue_tree
+                .get_current_node()
+            )
+
+            self.menu_label.config(
+                text=(
+                    "Invalid dialogue choice.\n\n"
+                    + current_node.text
+                    + "\n\n"
+                    + "\n".join(
+                        f"{key}. {text}"
+                        for key, (text, _) in
+                        current_node.options.items()
+                    )
+                )
+            )
+
+            return
+
+        if next_node.options:
+
+            self._display_dialogue_node(
+                next_node
+            )
+
+        else:
+
+            self.game_state = "gameplay"
+            self.current_npc = None
+
+            self.menu_label.config(
+                text=(
+                    "*Conversation ended*\n\n"
+                    + self.current_area.get_details()
+                )
+            )
+
+
 if __name__ == "__main__":
+
     window = tk.Tk()
-    app = Game(window)
+
+    app = Game(
+        window
+    )
+
     window.mainloop()
