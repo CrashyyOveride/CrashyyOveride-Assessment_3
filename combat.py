@@ -132,7 +132,6 @@ class CombatManager:
             f"and deals {damage} damage to you."
         )
 
-
     def drop_loot(self, enemy):
 
         # The Lesser Dragon always drops the rune.
@@ -156,6 +155,20 @@ class CombatManager:
             )
 
             return loot
+
+        if enemy.name == "Soldat Vanderbilt":
+
+            if random.random() < 0.90:
+
+                loot = game_logic.glacialhilt
+
+                self.game.current_area.add_item(
+                    loot
+                )
+
+                return loot
+
+            return None
 
         # Noid has a chance to drop vantablack great axe.
         if enemy.name == "Noid":
@@ -231,12 +244,41 @@ def start_encounter(
         "player": game_logic.player,
         "predicted_enemy_action": predicted,
         "loot_on_ground": None,
-        "post_combat": False
+        "post_combat": False,
+        "boss_intro": enemy.name == "Ancient True Dragon Lucidusax"
     }
 
     game.game_state = "combat"
 
-    # Show the player what the enemy might do.
+    if enemy.name == "Ancient True Dragon Lucidusax":
+
+        game.menu_label.config(
+            text=(
+                "\n\n\n"
+                f"{'ANCIENT TRUE DRAGON LUCIDUSAX':^70}\n\n"
+                "Before the first flame was kindled,\n"
+                "before kingdoms rose beneath the heavens,\n"
+                "there were dragons who knew no master.\n\n"
+                "You have climbed beyond the world of men,\n"
+                "beyond the earth, beyond the clouds,\n"
+                "and into a place where such beings still endure.\n\n"
+                "The air grows still.\n"
+                "The sky darkens.\n"
+                "Something ancient has noticed you.\n\n"
+                "Lucidusax, the ancient true dragon,\n"
+                "turns its gaze toward the Exiled.\n\n"
+                "\"Mortal...\n"
+                "you have wandered far beyond your place.\"\n\n"
+                "\"Turn back now,\n"
+                "or be remembered among the forgotten dead.\"\n\n"
+                "\"For I am Lucidusax.\n"
+                "And this sky is mine.\"\n\n\n"
+                f"{'Type \"continue\" to begin combat.':^70}"
+            )
+        )
+
+        return
+
     tell = manager.get_action_tell(
         enemy,
         predicted
@@ -335,6 +377,110 @@ def handle_combat_input(
     player = game.combat_context["player"]
     dungeon = game.combat_context["dungeon"]
 
+    if game.combat_context.get(
+        "boss_intro"
+    ):
+
+        if cmd == "continue":
+
+            game.combat_context[
+                "boss_intro"
+            ] = False
+
+            predicted = manager.predict_enemy_action(
+                enemy,
+                player
+            )
+
+            game.combat_context[
+                "predicted_enemy_action"
+            ] = predicted
+
+            tell = manager.get_action_tell(
+                enemy,
+                predicted
+            )
+
+            enemy_health_percent = (
+                enemy.current_health
+                / enemy.max_health
+                if enemy.max_health > 0
+                else 0
+            )
+
+            player_health_percent = (
+                player.current_health
+                / player.max_health
+                if player.max_health > 0
+                else 0
+            )
+
+            bar_length = 20
+
+            enemy_filled = int(
+                bar_length * enemy_health_percent
+            )
+
+            player_filled = int(
+                bar_length * player_health_percent
+            )
+
+            enemy_bar = (
+                "["
+                + "=" * enemy_filled
+                + " " * (
+                    bar_length - enemy_filled
+                )
+                + "]"
+            )
+
+            player_bar = (
+                "["
+                + "=" * player_filled
+                + " " * (
+                    bar_length - player_filled
+                )
+                + "]"
+            )
+
+            enemy_line = (
+                f"{enemy.name} "
+                f"(HP: {enemy.current_health}/"
+                f"{enemy.max_health})"
+            )
+
+            player_line = (
+                f"YOUR HP: "
+                f"{player.current_health}/"
+                f"{player.max_health}"
+            )
+
+            prompt = (
+                f"{'YOU ENTER COMBAT!':^70}\n\n"
+                f"{enemy_line:>70}\n"
+                f"{enemy_bar:>70}\n\n"
+                f"TELL: {tell}\n\n\n"
+                f"{player_line:<70}\n"
+                f"{player_bar:<70}\n\n"
+                f"{'Choose your action:':^70}\n"
+                f"{'attack / parry / flee':^70}\n"
+                f"{'(Type \"attack\", \"parry\", \"flee\")':^70}\n"
+            )
+
+            game.menu_label.config(
+                text=prompt
+            )
+
+            return
+
+        game.menu_label.config(
+            text=(
+                "The ancient dragon watches you.\n\n"
+                "Type 'continue' to begin combat."
+            )
+        )
+
+        return
 
     if game.combat_context.get(
         "post_combat"
@@ -488,7 +634,6 @@ def handle_combat_input(
 
         return
 
-
     # Handle loot before letting the player continue.
     if game.combat_context.get(
         "loot_on_ground"
@@ -583,7 +728,6 @@ def handle_combat_input(
 
             return
 
-
     if cmd == "attack":
 
         # Add a little randomness to player damage.
@@ -653,8 +797,34 @@ def handle_combat_input(
 
         return
 
-
     if not enemy.is_alive:
+
+        if enemy.name == "Ancient True Dragon Lucidusax":
+
+            game.game_state = "ending"
+            game.combat_context = None
+
+            game.menu_label.config(
+                text=(
+                    "\n\n"
+                    "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                    "                    THE SKIES ARE FREE\n"
+                    "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n"
+                    "Lucidusax falls.\n\n"
+                    "But far beyond the clouds, something stirs.\n\n"
+                    "The skies may be free...\n"
+                    "but freedom has a price.\n\n"
+                    "And somewhere beyond the edge of the heavens,\n "
+                    "another story waits to begin.\n\n"
+                    "SKYBORNE: SKIES END\n"
+                    "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                    "                         THE END\n"
+                    "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+                )
+            )
+
+
+            return
 
         output_lines.append(
             f"You defeated {enemy.name}!"
@@ -700,7 +870,6 @@ def handle_combat_input(
 
         return
 
-
     predicted = game.combat_context[
         "predicted_enemy_action"
     ]
@@ -722,7 +891,6 @@ def handle_combat_input(
     output_lines.append(
         enemy_turn_msg
     )
-
 
     if not player.is_alive:
 
@@ -757,7 +925,6 @@ def handle_combat_input(
         )
 
         return
-
 
     next_predicted = (
         manager.predict_enemy_action(
