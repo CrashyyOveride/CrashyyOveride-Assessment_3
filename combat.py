@@ -1,6 +1,7 @@
 import random
 import game_logic
 
+
 class CombatManager:
 
     def __init__(self, game):
@@ -13,14 +14,12 @@ class CombatManager:
         player
     ):
 
-        # Low HP makes enemies play more aggressively.
         if enemy.current_health <= max(
             1,
             int(enemy.max_health * 0.25)
         ):
             return "desperate_strike"
 
-        # Big enemies will usually go for a heavy attack.
         if (
             enemy.get_attack_power()
             >= player.get_attack_power() * 2
@@ -35,7 +34,6 @@ class CombatManager:
         action
     ):
 
-        # Give the player a hint about what's coming.
         if action == "desperate_strike":
 
             return (
@@ -65,7 +63,6 @@ class CombatManager:
 
         base = enemy.get_attack_power()
 
-        # Small damage variation keeps attacks less predictable.
         variance = random.randint(
             -3,
             3
@@ -134,7 +131,6 @@ class CombatManager:
 
     def drop_loot(self, enemy):
 
-        # The Lesser Dragon always drops the rune.
         if enemy.name == "Lesser Dragon":
 
             loot = game_logic.greatrune
@@ -145,7 +141,6 @@ class CombatManager:
 
             return loot
 
-        # The Draconic Gloomtree Sentinel always drops the rune.
         if enemy.name == "Draconic Gloomtree Sentinel":
 
             loot = game_logic.greatrune
@@ -170,7 +165,6 @@ class CombatManager:
 
             return None
 
-        # Noid has a chance to drop vantablack great axe.
         if enemy.name == "Noid":
 
             if random.random() < 0.10:
@@ -185,7 +179,6 @@ class CombatManager:
 
             return None
 
-        # Most enemies have a small chance to drop something.
         if random.random() < 0.3:
 
             loot_options = [
@@ -213,7 +206,6 @@ def start_encounter(
     dungeon
 ):
 
-    # Grab the next enemy waiting in the dungeon.
     enemy = dungeon.get_current_enemy()
 
     if enemy is None:
@@ -354,7 +346,6 @@ def handle_combat_input(
     command_raw
 ):
 
-    # Make sure there is still an active fight.
     if not game.combat_context:
 
         game.game_state = "gameplay"
@@ -634,7 +625,6 @@ def handle_combat_input(
 
         return
 
-    # Handle loot before letting the player continue.
     if game.combat_context.get(
         "loot_on_ground"
     ):
@@ -653,6 +643,40 @@ def handle_combat_input(
                 == weapon_name.lower()
             ):
 
+                if loot in game.player_inventory.items:
+
+                    game.combat_context[
+                        "loot_on_ground"
+                    ] = None
+
+                    if loot in game.current_area.items:
+                        game.current_area.items.remove(
+                            loot
+                        )
+
+                    game.combat_context[
+                        "post_combat"
+                    ] = True
+
+                    output_lines.append(
+                        f"You already have {loot.name} "
+                        "in your inventory."
+                    )
+
+                    output_lines.append(
+                        "\nType 'continue' to continue "
+                        "through the dungeon or "
+                        "'leave' to leave."
+                    )
+
+                    game.menu_label.config(
+                        text="\n\n".join(
+                            output_lines
+                        )
+                    )
+
+                    return
+
                 if game.player_inventory.add_item(
                     loot
                 ):
@@ -661,7 +685,6 @@ def handle_combat_input(
                         "loot_on_ground"
                     ] = None
 
-                    # Remove the item once it is picked up.
                     if loot in game.current_area.items:
                         game.current_area.items.remove(
                             loot
@@ -703,34 +726,29 @@ def handle_combat_input(
 
                 return
 
-            else:
-
-                output_lines.append(
-                    "That's not the weapon on the ground."
-                )
-
-                game.menu_label.config(
-                    text="\n\n".join(output_lines)
-                )
-
-                return
-
-        else:
-
-            loot_name = loot.name
+            output_lines.append(
+                "That's not the weapon on the ground."
+            )
 
             game.menu_label.config(
-                text=(
-                    f"Type 'take {loot_name}' "
-                    "to pick it up."
-                )
+                text="\n\n".join(output_lines)
             )
 
             return
 
+        loot_name = loot.name
+
+        game.menu_label.config(
+            text=(
+                f"Type 'take {loot_name}' "
+                "to pick it up."
+            )
+        )
+
+        return
+
     if cmd == "attack":
 
-        # Add a little randomness to player damage.
         damage = max(
             1,
             player.get_attack_power()
@@ -754,7 +772,6 @@ def handle_combat_input(
 
     elif cmd == "flee":
 
-        # Fleeing has a 50/50 chance of working.
         if random.random() < 0.5:
 
             game.current_area = (
@@ -814,7 +831,7 @@ def handle_combat_input(
                     "But far beyond the clouds, something stirs.\n\n"
                     "The skies may be free...\n"
                     "but freedom has a price.\n\n"
-                    "And somewhere beyond the edge of the heavens,\n "
+                    "And somewhere beyond the edge of the heavens,\n"
                     "another story waits to begin.\n\n"
                     "SKYBORNE: SKIES END\n"
                     "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
@@ -822,7 +839,6 @@ def handle_combat_input(
                     "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
                 )
             )
-
 
             return
 
@@ -878,7 +894,6 @@ def handle_combat_input(
         cmd == "parry"
     )
 
-    # Enemy gets its turn after the player's action.
     enemy_turn_msg = (
         manager.execute_enemy_turn(
             enemy,
@@ -894,7 +909,6 @@ def handle_combat_input(
 
     if not player.is_alive:
 
-        # Reset the player after a defeat.
         player.current_health = (
             player.max_health
         )
