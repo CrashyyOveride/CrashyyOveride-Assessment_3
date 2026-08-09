@@ -518,10 +518,10 @@ def create_soldat_dialogue():
             "Soldat: Someone has to.\n"
             "Anatoli is my home. These mountains are my "
             "responsibility.\n"
-            "Besides, someone needs to make sure my men "
-            "don't freeze to death or get eaten.\n"
-            "They're surprisingly good at finding ways "
-            "to accomplish both."
+            "Also I've found this note that says "
+            "'Password'\n"
+            "I don't really know what to say? "
+            "But anyway."
         )
     )
 
