@@ -134,16 +134,16 @@ At the absolute apex of the clouds sits Ventus Azura, the Sky fortress. It is no
 ## --------Common Items--------
 
 ### Dagger (Dagger class)
-This small blade can be bought in any shop.
+This small blade can be dropped from any enemy in dungeon 1.
 
 ### Shield (Shield class)
-This shield can be bought in any shop.
+This small blade can be dropped from any enemy in dungeon 1.
 
 ### Longsword (Sword class)
-This longsword can be bought in any shop.
+This small blade can be dropped from any enemy in dungeon 1.
 
 ### Greatsword (Sword class)
-This greatsword can be bought in any shop.
+This small blade can be dropped from any enemy in dungeon 1.
 
 ### Stick (Sword class)
 This item can be found while exploring deep paths, venturing outside dungeons. This is a totally normal stick, with only one effect which is a debuff called 'Embarrassment' which decreases ones self image. (This effect has no true value towards anything in the game, it just why are you holding a stick?)
