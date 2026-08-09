@@ -11,7 +11,7 @@ This project translates tactical dark-fantasy "reflexes" into strategic "resourc
 ### Core Gameplay Dynamics
 * **The Action Economy**: Every movement, dodge, and strike consumes static Stamina points.
 * **The Telegraph System**: Enemy units broadcast combat text cues ("Tells") requiring precise user reactions.
-* **The Stagger Metric**: Sustained offensive actions break enemy poise thresholds to unlock high-yield critical modifiers.
+* **The Parry Metric**: Sustained offensive actions break enemy poise thresholds to unlock high-yield critical modifiers.
 
 ---
 
