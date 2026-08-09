@@ -101,6 +101,10 @@ A grotesque construct forged from weathered stone, corpse-wax, and the severed w
 ### Great Dragon Agheel the Watchkeeper
 He sits at the base of the lowest stratum or guards the final gateway leading up to Ventus Azura. Mortals only see Agheel as a massive great dragon, unaware that his true, space-bending form extends far beyond the clouds. He is one of the few great dragons that were named, as only true dragons are given the permission to be named.
 
+# Final Boss Arena
+
+### Ancient True Dragon Lucidusax
+Ancient True Dragon Lucidusax is one of the oldest and most powerful beings in existence, dwelling at the highest point of Ventus Azura beyond the reach of ordinary mortals. Unlike lesser dragons, Lucidusax is a true dragon, capable of controlling wild magic with complete mastery. Its enormous body bends space around it, making its true size impossible for mortals to understand. Very little is known about its origins, but ancient records suggest it existed long before the kingdoms of man. Lucidusax does not attack immediately when approached; instead, it watches silently, as though judging those who dare enter its domain. When provoked, however, the dragon unleashes wild magic powerful enough to distort the sky itself, turning the final battle into a fight against a creature that feels less like a living beast and more like an ancient force of nature. 
 
 ---
 
