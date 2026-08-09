@@ -321,11 +321,11 @@ def create_soldat_dialogue():
         (
             "Soldat: I'm the commander of the northern expedition squad.\n"
             "I've got roughly ten men under my command.\n"
-            "We patrol the northern routes, map the mountains, "
-            "and keep watch over the things that crawl out of the "
-            "dungeons.\n"
+            "We patrol the northern routes, map the mountains,\n "
+            "and keep watch over the things that crawl out of the \n"
+            "dungeons."
             "Most of my men are good soldiers. A few are idiots.\n"
-            "Usually the idiots are the ones who volunteer "
+            "Usually the idiots are the ones who volunteer\n "
             "to go first."
         )
     )
@@ -358,8 +358,8 @@ def create_soldat_dialogue():
             "The mountains don't behave like normal land.\n"
             "Strange weather. Strange creatures. Strange ruins.\n"
             "And then there's the thing at the top.\n"
-            "The old stories say something sleeps above "
-            "the clouds.\n"
+            "The old stories say something sleeps above\n "
+            "the clouds."
             "I don't believe old stories.\n"
             "But I also don't climb mountains for fun."
         )
@@ -393,9 +393,9 @@ def create_soldat_dialogue():
             "Everyone who comes here thinks they're the one "
             "who can handle it.\n"
             "Anatoli has buried stronger men than you and me.\n"
-            "If you intend to keep going north, don't mistake "
+            "If you intend to keep going north, don't mistake\n "
             "surviving one fight for being prepared.\n"
-            "The higher you climb, the less the world behaves "
+            "The higher you climb, the less the world behaves\n "
             "the way it should."
         )
     )
