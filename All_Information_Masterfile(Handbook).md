@@ -93,7 +93,8 @@ The horrors of what a great dragon can become, rotted by the gloomwood forest, i
 # Dungeon 3 Enemies & Boss
 
 ### Sky Gargoyle 
-This 
+
+###
 
 
 ---
@@ -112,7 +113,7 @@ This dungeon is entered by venturing out into the deep, dark depths of the surfa
 ### Sky Lift (4th Area)
 This lift is the grand entrance to the lands high up upon the clouds. You feel a sense of familiarity however you can't quite understand where it's coming from? This is opened once all dungeons are cleared and you have at least 2 of Orsted Great Runes.  
 
-### Sky Temple (5th Area)
+### Sky Temple (3rd Dungeon)
 Once leaving the earthly plain of existence, the lift is destroyed by a fireball that came from the highest peak of these clouds. Now unable to go back, you must continue forward to the highest point, travelling by ruins that you can interact with. 
 
 ### Parthalán Hideout (Secret Location)
@@ -124,7 +125,7 @@ This town is now unlocked after beating Ashenhollow the first dungeon, it's up t
 ### Shadowsedge (3rd Area)
 Perched on the edge of the Gloomwood forest, Shadowsedge serves as a vital frontier outpost rahter than a permanent home. Travelers who come this far to this bleak settlement call it a glorified checkpoint. To keep the forest's rot infected enemies at bat, the outpost has eight-meter-high walls encircling the town hall and the local population. The buildings are made from the very greyscale wood that haunts the Gloomwood forest dungeon, as only through intense purification process does this corrupted wood become stable enough to build with. 
 
-### Ventus Azura (3rd Dungeon and Final Dungeon)
+### Ventus Azura (End Game Boss Area)
 At the absolute apex of the clouds sits Ventus Azura, the Sky fortress. It is not empty with ancient symbols and signs, but an active home to the most horrifying beings that are allowed on this plain of existence: True Dragons. They are the only beings capable of mastering and using wild magic at will. These dragons are fierce and massive, not bound by time or space. They stand at sizes that only can be perceived fully from another stratum.  
 
 ---
