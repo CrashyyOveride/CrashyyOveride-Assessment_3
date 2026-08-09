@@ -58,7 +58,7 @@ Orsted is the leader of the band of bandits called ‘Gilded Gold’. He is a ve
 This band of low level bandits are what make up this group. They are mostly weak. This group will be encountered by chance, while venturing on land, as they do not appear inside a dungeon. However their boss Orsted Drake can appear at any moment in the game. Orsted does not concern himself with their activities, as he wasn't even the one who made up this band of bandits. (They formed from admirers)
 
 ### Mary Althea
-This character is one of few characters that will help you along your venture. She may appear, you have either two choices, get healed or dismiss her. By choosing to get healed, she doesn’t appear anymore, however dismissing her, she may have another chance again to appear. Her minimum appearance rate in the game is 1.
+This character is one of few characters that will help you along your venture. She gives you valurable information at the start at the game. She knows more then she is leading on.
 
 ---
 
