@@ -658,7 +658,7 @@ lucidusax = Enemy(
 
 dagger = Weapon(
     name="Dagger",
-    bonus_damage=1000,
+    bonus_damage=5,
     rarity="Common",
     description="This small blade can be bought in any shop."
 )
@@ -672,14 +672,14 @@ shield = Weapon(
 
 longsword = Weapon(
     name="Longsword",
-    bonus_damage=5,
+    bonus_damage=6,
     rarity="Common",
     description="This longsword can be bought in any shop."
 )
 
 greatsword = Weapon(
     name="Greatsword",
-    bonus_damage=5,
+    bonus_damage=7,
     rarity="Common",
     description="This greatsword can be bought in any shop."
 )
