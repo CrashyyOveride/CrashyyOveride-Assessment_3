@@ -249,7 +249,7 @@ class Game:
             self.menu_label.config(
                 text=(
                     "Credits\n\n"
-                    "Created by Matej.\n\n"
+                    "Created by Tynan Kocet. ;)\n\n"
                     "Type 0 to go back."
                 )
             )
