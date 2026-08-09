@@ -355,7 +355,8 @@ if __name__ == "__main__":
 ### Next Steps & Evolution
 * **Building the core code:** I will begin developing and refining the final combat state machine aswell as location and travel. This includes binding the Tkinter entry field data directly to dynamic character choice variables, linking weapon object stat modifiers directly to ally attacks, and converting static menu panels into scrolling narrative text feeds.
 
-# Journal Entry: August 3 - August 5 2026
+# Journal Entry: August 3 - August 5,
+2026
 
 ## Project: Python Text-Based RPG (Debugging Inventory Interface)
 
@@ -386,6 +387,34 @@ AttributeError: 'Inventory' object has no attribute 'list_items'
 
 ### Next Steps & Evolution
 * **Integrate Weapon Profiles:** Once the string rendering is stable, I will begin populating the active inventory pools with the newly generated weapon data arrays, starting with the baseline *Dagger* and *Longsword* profiles.
+
+# Journal Entry: August 5 - August 9, 2026
+
+## Project: Python Text-Based RPG (Polishing the Game)
+
+### Current Progress
+Today was spent polishing the final version of the game. Over the past week, I have been going through the game and fixing each bug that I come across. Instead of adding large amounts of new content, I have mainly been focusing on making sure the features that already exist work correctly and feel consistent. 
+
+I have been testing different parts of the game repeatedly, including:
+*   The menu system
+*   Story progression
+*   Travelling between areas
+*   Combat and dialogue
+*   Inventory and weapons
+*   Dungeons and various game locations
+
+While testing, I have been looking for small issues that could affect the player's experience, such as incorrect commands, areas not behaving correctly, or features not responding the way they should. 
+
+A major part of this stage has been making the game feel more complete and polished. Some of the changes have been small, but they are important because they prevent confusion and make the game easier to play. I have also been checking that different systems work together properly rather than only testing them individually. 
+
+The game is now much closer to what I originally wanted it to be. At this point, I am mainly focused on finding remaining bugs, improving consistency, and making sure the final version is stable enough to be played from beginning to end without major problems.
+
+### Reflection
+This part of the project has shown me that finishing a game is not only about adding new features. A large amount of work comes from testing, finding problems, and repeatedly improving what is already there. Some bugs have been easy to fix, while others have required me to look through multiple parts of the code to understand why they were happening. 
+
+Overall, I am happy with how the game has developed. The main systems are now in place, and the remaining work is mostly focused on polishing and making the experience as smooth as possible.
+
+
 
 
 
