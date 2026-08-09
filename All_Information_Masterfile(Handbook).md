@@ -68,7 +68,7 @@ This character is one of few characters that will help you along your venture. S
 Found in any levels of a dungeon. This orb is a pure black ball, compressed of high levels of wild magic, nearly uncontrollable by a mere human. Orb is the most common enemy you will encounter within a dungeon. Although the weakest by far of all the enemies, Orb is an unruly and unpredictable enemy, he may become stronger with the right conditions.
 
 ### Noid
-Found in the upper to middle levels of a dungeon. This enemy doesn’t like to reveal itself, however slight glimpses have been seen by other dungeon divers, describing them as a nightmarish figure. This enemy travels in a pack of 3-4, making it hard to dodge incoming attacks. These creatures do not like light, they will actively avoid a light source. These enemies tend to try to communicate to you, do not communicate back.
+Found in the upper to middle levels of a dungeon. This enemy doesn’t like to reveal itself, however slight glimpses have been seen by other dungeon divers, describing them as a nightmarish figure. This enemy travels in a pack of 3-4, making it hard to dodge incoming attacks. 
 
 ### Drakonid
 Found in the middle to lower levels of a dungeon. This enemy has shiny scales, and a sharp edged tail. These enemies are equipped with basic equipment, swords and a shield. They are somewhat weaker to physical attacks, as their shiny scales disenchant magic. On each of their left arms carry the logo ‘G.G’.
