@@ -838,7 +838,7 @@ parthalanhideout.add_item(
 
 landing_zone = Area(
     name="Drop Zone",
-    description="####",
+    description="Barren wasteland...",
     zone_type="Standard"
 )
 
