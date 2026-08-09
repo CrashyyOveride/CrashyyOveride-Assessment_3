@@ -51,10 +51,10 @@ He is a drunken fellow, always making ruffles in taverns. He is a former dungeon
 ### Soldat Vanderbilt
 Soldat is a commander of a north expedition squad, leading roughly 10 men in his unit. He commands respect but is often dense. His squad makes some dungeons diving difficult for you as they have a chance to appear (ONLY IN NORTH AREAS), halting you from going in deeper.
 
-### Orsted Drake
-Orsted is the leader of the band of bandits called ‘Gilded Gold’. He is a very powerful character. This character is NOT an attackable character, no matter how powerful you are. Once he appears you must immediately avoid him or end up having to play a mini game which has a very high risk of killing you. This character's appearance in the game is very rare, as most of the encounters of the Gilded Gold are with his underlings which are very weak compared to him. NPCs will actively kick you out of taverns or safe points, if you speak the name ‘Orsted’ as it’s a folk tale that his name brings curses upon those who speak of him.
+### Orsted Drake (Sequel)
+Orsted is the leader of the band of bandits called ‘Gilded Gold’. He is a very powerful character. This character is NOT an attackable character, no matter how powerful you are. Once he appears you must immediately avoid him or end up having to play a mini game which has a very high risk of killing you. This character's appearance in the game is very rare, as most of the encounters of the Gilded Gold are with his underlings which are very weak compared to him. 
 
-### Gilded Gold
+### Gilded Gold (Sequel)
 This band of low level bandits are what make up this group. They are mostly weak. This group will be encountered by chance, while venturing on land, as they do not appear inside a dungeon. However their boss Orsted Drake can appear at any moment in the game. Orsted does not concern himself with their activities, as he wasn't even the one who made up this band of bandits. (They formed from admirers)
 
 ### Mary Althea
