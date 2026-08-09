@@ -31,6 +31,7 @@ The game focuses on exploration, combat, dialogue, inventory management, and str
 
 ## First Rough Draft of the Game Core Progression
 
+```text
 `Oakhaven Town Hub`
 ⬇
 `Dungeon Level 1 - Ashenhollow`
@@ -40,6 +41,7 @@ The game focuses on exploration, combat, dialogue, inventory management, and str
 `Dungeon Level 3 - Ventus Azura`
 ⬇
 `Dragon Arena - Final Boss and Final Level`
+```
 
 ---
 
